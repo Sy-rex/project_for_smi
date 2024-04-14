@@ -1,3 +1,12 @@
 <RCC>
-    <qresource prefix="/new/prefix1"/>
+    <qresource prefix="/images">
+        <file>Rocket_icon.jpg</file>
+		<file>first_button_menu.jpg</file>
+		<file>second_button_menu.jpg</file>
+		<file>third_button_menu.jpg</file>
+		<file>fourth_button_menu.jpg</file>
+		<file>fifth_button_menu.jpg</file>
+		<file>line.jpg</file>
+    </qresource>
 </RCC>
+

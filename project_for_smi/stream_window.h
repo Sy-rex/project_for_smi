@@ -1,23 +1,22 @@
-// mainwindow.h
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#ifndef STREAM_WINDOW_H
+#define STREAM_WINDOW_H
 
 #include <QMainWindow>
 #include <QPainter>
 #include <QPainterPath>
 #include <QMouseEvent>
 
-QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
-QT_END_NAMESPACE
+namespace Ui {
+class Stream_window;
+}
 
-class MainWindow : public QMainWindow
+class Stream_window : public QWidget
 {
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
+    explicit Stream_window(QWidget *parent = nullptr);
+    ~Stream_window();
 
 protected:
     void mousePressEvent(QMouseEvent *event) override {
@@ -48,10 +47,9 @@ protected:
     void paintEvent(QPaintEvent *event) override;
 
 private:
-    Ui::MainWindow *ui;
+    Ui::Stream_window *ui;
     bool m_dragging = false;
     QPoint m_dragPosition;
 };
 
-#endif // MAINWINDOW_H
-
+#endif // STREAM_WINDOW_H
