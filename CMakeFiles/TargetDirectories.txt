@@ -1,0 +1,4 @@
+C:/Users/User/Desktop/project_for_smi/CMakeFiles/project_for_smi.dir
+C:/Users/User/Desktop/project_for_smi/CMakeFiles/INSTALL.dir
+C:/Users/User/Desktop/project_for_smi/CMakeFiles/ALL_BUILD.dir
+C:/Users/User/Desktop/project_for_smi/CMakeFiles/ZERO_CHECK.dir

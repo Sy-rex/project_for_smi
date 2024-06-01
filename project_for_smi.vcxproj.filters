@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\mocs_compilation_Debug.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\Desktop\project_for_smi\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\Desktop\project_for_smi\mainwindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\Desktop\project_for_smi\adding_into_article.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\Desktop\project_for_smi\adding_into_author.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\Desktop\project_for_smi\adding_into_edition.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\Desktop\project_for_smi\adding_into_journal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\Desktop\project_for_smi\adding_records.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\Desktop\project_for_smi\author_search.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\Desktop\project_for_smi\hot_news.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\Desktop\project_for_smi\registration.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\Desktop\project_for_smi\stream_window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\Desktop\project_for_smi\update_data.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\EWIEGA46WW\qrc_resource_qt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\mocs_compilation_Release.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\mocs_compilation_MinSizeRel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\mocs_compilation_RelWithDebInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\adding_into_article.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\adding_into_author.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\adding_into_edition.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\adding_into_journal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\adding_records.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\author_search.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\hot_news.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\registration.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\stream_window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\update_data.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\include_Debug\ui_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\include_Debug\ui_adding_into_article.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\include_Debug\ui_adding_into_author.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\include_Debug\ui_adding_into_edition.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\include_Debug\ui_adding_into_journal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\include_Debug\ui_adding_records.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\include_Debug\ui_author_search.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\include_Debug\ui_hot_news.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\include_Debug\ui_registration.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\include_Debug\ui_stream_window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\include_Debug\ui_update_data.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\include_Release\ui_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\include_Release\ui_adding_into_article.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\include_Release\ui_adding_into_author.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\include_Release\ui_adding_into_edition.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\include_Release\ui_adding_into_journal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\include_Release\ui_adding_records.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\include_Release\ui_author_search.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\include_Release\ui_hot_news.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\include_Release\ui_registration.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\include_Release\ui_stream_window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\include_Release\ui_update_data.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\include_MinSizeRel\ui_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\include_MinSizeRel\ui_adding_into_article.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\include_MinSizeRel\ui_adding_into_author.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\include_MinSizeRel\ui_adding_into_edition.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\include_MinSizeRel\ui_adding_into_journal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\include_MinSizeRel\ui_adding_records.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\include_MinSizeRel\ui_author_search.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\include_MinSizeRel\ui_hot_news.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\include_MinSizeRel\ui_registration.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\include_MinSizeRel\ui_stream_window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\include_MinSizeRel\ui_update_data.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\include_RelWithDebInfo\ui_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\include_RelWithDebInfo\ui_adding_into_article.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\include_RelWithDebInfo\ui_adding_into_author.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\include_RelWithDebInfo\ui_adding_into_edition.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\include_RelWithDebInfo\ui_adding_into_journal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\include_RelWithDebInfo\ui_adding_records.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\include_RelWithDebInfo\ui_author_search.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\include_RelWithDebInfo\ui_hot_news.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\include_RelWithDebInfo\ui_registration.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\include_RelWithDebInfo\ui_stream_window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\include_RelWithDebInfo\ui_update_data.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\User\Desktop\project_for_smi\CMakeFiles\67a779c866d83199e14730975331f73d\autouic_(CONFIG).stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\User\Desktop\project_for_smi\CMakeFiles\963ba8a68b305def599d7eda905c59be\qrc_resource_qt.cpp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\User\Desktop\project_for_smi\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\User\Desktop\project_for_smi\mainwindow.ui" />
+    <None Include="C:\Users\User\Desktop\project_for_smi\adding_into_article.ui" />
+    <None Include="C:\Users\User\Desktop\project_for_smi\adding_into_author.ui" />
+    <None Include="C:\Users\User\Desktop\project_for_smi\adding_into_edition.ui" />
+    <None Include="C:\Users\User\Desktop\project_for_smi\adding_into_journal.ui" />
+    <None Include="C:\Users\User\Desktop\project_for_smi\adding_records.ui" />
+    <None Include="C:\Users\User\Desktop\project_for_smi\author_search.ui" />
+    <None Include="C:\Users\User\Desktop\project_for_smi\hot_news.ui" />
+    <None Include="C:\Users\User\Desktop\project_for_smi\registration.ui" />
+    <None Include="C:\Users\User\Desktop\project_for_smi\stream_window.ui" />
+    <None Include="C:\Users\User\Desktop\project_for_smi\update_data.ui" />
+    <None Include="C:\Users\User\Desktop\project_for_smi\resource_qt.qrc" />
+    <None Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\autouic_Debug.stamp" />
+    <None Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\autouic_Release.stamp" />
+    <None Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\autouic_MinSizeRel.stamp" />
+    <None Include="C:\Users\User\Desktop\project_for_smi\project_for_smi_autogen\autouic_RelWithDebInfo.stamp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{1BB12CB6-DE10-3798-B178-37BC3836E2FC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{213E3C0E-B0B4-31B1-B615-B234C849E47F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{D5602CDF-240C-3E1D-BB47-5C35F52E69BF}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

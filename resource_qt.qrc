@@ -1,0 +1,47 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Rocket_icon.jpg</file>
+        <file>add_button.png</file>
+        <file>article.png</file>
+        <file>author.png</file>
+        <file>black_elipse.png</file>
+        <file>blue_elipse.png</file>
+        <file>bottle.png</file>
+        <file>description_article.png</file>
+        <file>description_author.png</file>
+        <file>description_edition.png</file>
+        <file>description_journal.png</file>
+        <file>description_works.png</file>
+        <file>edition.png</file>
+        <file>editor.png</file>
+        <file>fifth_button_menu.jpg</file>
+        <file>fire.png</file>
+        <file>first_button_menu.jpg</file>
+        <file>fourth_button_menu.jpg</file>
+        <file>gift.png</file>
+        <file>inform_update.png</file>
+        <file>journal.png</file>
+        <file>line.jpg</file>
+        <file>line_gradient.png</file>
+        <file>line_music.png</file>
+        <file>list_data.png</file>
+        <file>long_line.png</file>
+        <file>pause_button.png</file>
+        <file>play_button.png</file>
+        <file>reader.png</file>
+        <file>register_line.png</file>
+        <file>register_pill.png</file>
+        <file>restart_button.png</file>
+        <file>search_button.png</file>
+        <file>second_button_menu.jpg</file>
+        <file>smile.png</file>
+        <file>stream_line.png</file>
+        <file>test_elipse.png</file>
+        <file>text_polygon_left.png</file>
+        <file>text_polygon_right.png</file>
+        <file>third_button_menu.jpg</file>
+        <file>update_long_back.png</file>
+        <file>volume_music.png</file>
+        <file>works.png</file>
+    </qresource>
+</RCC>
