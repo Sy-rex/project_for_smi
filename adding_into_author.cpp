@@ -10,6 +10,7 @@
 #include <QMouseEvent>
 #include <QFont>
 #include <QLabel>
+#include <QLineEdit>
 
 
 class CloseButton : public QPushButton {
@@ -107,12 +108,27 @@ adding_into_author::adding_into_author(QWidget *parent)
 
     QFont font4("Poppins Medium", 12);
 
-    QLabel *label3 = new QLabel("НАЗВАНИЕ", this);
+    QLabel *label3 = new QLabel("АВТОР", this);
     label3->setStyleSheet("color: #FFFFFF;");
     label3->setFixedSize(100, 30);
-    label3->move(80,184);
+    label3->move(92,184);
     label3->setFont(font4);
     label3->installEventFilter(this);
+
+    QLineEdit *lineEdit = new QLineEdit(this);
+    lineEdit->setStyleSheet(
+        "QLineEdit {"
+        "  border-radius: 10px;"
+        "  padding: 5px;"
+        "  background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #48DCB7, stop:1 #8599F3);"
+        "  color: #FFFFFF;"
+        "  font-family: 'Poppins';"
+        "  selection-background-color: #555575;"
+        "  selection-color: #FFFFFF;"
+        "}"
+        );
+    lineEdit->setFixedSize(160, 30);
+    lineEdit->move(40, 230);
 
     QLabel *label4 = new QLabel("РЕДАКЦИЯ", this);
     label4->setStyleSheet("color: #FFFFFF;");
@@ -127,6 +143,21 @@ adding_into_author::adding_into_author(QWidget *parent)
     label5->move(480, 184);
     label5->setFont(font4);
     label5  ->installEventFilter(this);
+
+    QLineEdit *lineEdit2 = new QLineEdit(this);
+    lineEdit2->setStyleSheet(
+        "QLineEdit {"
+        "  border-radius: 10px;"
+        "  padding: 5px;"
+        "  background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #48DCB7, stop:1 #8599F3);"
+        "  color: #FFFFFF;"
+        "  font-family: 'Poppins';"
+        "  selection-background-color: #555575;"
+        "  selection-color: #FFFFFF;"
+        "}"
+        );
+    lineEdit2->setFixedSize(160, 30);
+    lineEdit2->move(436, 230);
 
     QPushButton *imageButton2 = new QPushButton(this);
     imageButton2->setFlat(true);

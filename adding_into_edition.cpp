@@ -10,6 +10,7 @@
 #include <QMouseEvent>
 #include <QFont>
 #include <QLabel>
+#include <QLineEdit>
 
 
 class CloseButton : public QPushButton {
@@ -114,12 +115,42 @@ adding_into_edition::adding_into_edition(QWidget *parent)
     label3->setFont(font4);
     label3->installEventFilter(this);
 
+    QLineEdit *lineEdit = new QLineEdit(this);
+    lineEdit->setStyleSheet(
+        "QLineEdit {"
+        "  border-radius: 10px;"
+        "  padding: 5px;"
+        "  background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #48DCB7, stop:1 #8599F3);"
+        "  color: #FFFFFF;"
+        "  font-family: 'Poppins';"
+        "  selection-background-color: #555575;"
+        "  selection-color: #FFFFFF;"
+        "}"
+        );
+    lineEdit->setFixedSize(160, 30);
+    lineEdit->move(40, 230);
+
     QLabel *label4 = new QLabel("ДАТА ОСНОВАНИЯ", this);
     label4->setStyleSheet("color: #FFFFFF;");
     label4->setFixedSize(180, 30);
     label4->move(250, 184);
     label4->setFont(font4);
     label4->installEventFilter(this);
+
+    QLineEdit *lineEdit2 = new QLineEdit(this);
+    lineEdit2->setStyleSheet(
+        "QLineEdit {"
+        "  border-radius: 10px;"
+        "  padding: 5px;"
+        "  background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #48DCB7, stop:1 #8599F3);"
+        "  color: #FFFFFF;"
+        "  font-family: 'Poppins';"
+        "  selection-background-color: #555575;"
+        "  selection-color: #FFFFFF;"
+        "}"
+        );
+    lineEdit2->setFixedSize(160, 30);
+    lineEdit2->move(238, 230);
 
     QLabel *label5 = new QLabel("РЕЙТИНГ", this);
     label5->setStyleSheet("color: #FFFFFF;");
@@ -128,12 +159,42 @@ adding_into_edition::adding_into_edition(QWidget *parent)
     label5->setFont(font4);
     label5  ->installEventFilter(this);
 
+    QLineEdit *lineEdit3 = new QLineEdit(this);
+    lineEdit3->setStyleSheet(
+        "QLineEdit {"
+        "  border-radius: 10px;"
+        "  padding: 5px;"
+        "  background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #48DCB7, stop:1 #8599F3);"
+        "  color: #FFFFFF;"
+        "  font-family: 'Poppins';"
+        "  selection-background-color: #555575;"
+        "  selection-color: #FFFFFF;"
+        "}"
+        );
+    lineEdit3->setFixedSize(160, 30);
+    lineEdit3->move(436, 230);
+
     QLabel *label6 = new QLabel("РЕДАКТОР", this);
     label6->setStyleSheet("color: #FFFFFF;");
     label6->setFixedSize(100, 30);
     label6->move(278, 288);
     label6->setFont(font4);
     label6->installEventFilter(this);
+
+    QLineEdit *lineEdit4 = new QLineEdit(this);
+    lineEdit4->setStyleSheet(
+        "QLineEdit {"
+        "  border-radius: 10px;"
+        "  padding: 5px;"
+        "  background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #48DCB7, stop:1 #8599F3);"
+        "  color: #FFFFFF;"
+        "  font-family: 'Poppins';"
+        "  selection-background-color: #555575;"
+        "  selection-color: #FFFFFF;"
+        "}"
+        );
+    lineEdit4->setFixedSize(160, 30);
+    lineEdit4->move(238, 334);
 
     QPushButton *imageButton2 = new QPushButton(this);
     imageButton2->setFlat(true);

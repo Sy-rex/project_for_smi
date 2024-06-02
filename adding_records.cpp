@@ -3,6 +3,7 @@
 #include "adding_into_author.h"
 #include "adding_into_edition.h"
 #include "adding_into_article.h"
+#include "adding_into_work.h"
 #include "ui_adding_records.h"
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
@@ -232,22 +233,18 @@ adding_records::adding_records(QWidget *parent)
     imageButton8->show();
 
 
-    QLabel *imageLabel9 = new QLabel(this);
+    QPushButton *imageButton9 = new QPushButton(this);
+    imageButton9->setFlat(true);
 
     // Загружаем изображение из файла ресурсов
     QPixmap pixmap9(":/works.png");
     pixmap9.setDevicePixelRatio(devicePixelRatio());
-
-    // Устанавливаем изображение в QLabel
-    imageLabel9->setPixmap(pixmap9);
-
-    // Устанавливаем размер QLabel, равный размеру изображения
-    imageLabel9->setFixedSize(pixmap9.size() / pixmap9.devicePixelRatio());
-
+    imageButton9->setIcon(QIcon(pixmap9));
+    imageButton9->setIconSize(pixmap9.size() / pixmap9.devicePixelRatio());
+    imageButton9->setFixedSize(pixmap9.size() / pixmap9.devicePixelRatio());
     // Размещаем QLabel в нужном месте
-    imageLabel9->move(340, 324);
-
-    imageLabel9->show();
+    imageButton9->move(340, 324);
+    imageButton9->show();
 
     QLabel *imageLabel10 = new QLabel(this);
 
@@ -280,6 +277,8 @@ adding_records::adding_records(QWidget *parent)
     connect(imageButton4, &QPushButton::clicked, this, &adding_records::onThirdButtonClicked);
 
     connect(imageButton8, &QPushButton::clicked, this, &adding_records::onFourthButtonClicked);
+
+    connect(imageButton9, &QPushButton::clicked, this, &adding_records::onFifthButtonClicked);
 }
 
 adding_records::~adding_records()
@@ -343,5 +342,13 @@ void adding_records::onFourthButtonClicked()
     // Создание и отображение окна Stream_window
     adding_into_article *adding_article = new adding_into_article();
     adding_article->show();
+    this->close();
+}
+
+void adding_records::onFifthButtonClicked()
+{
+    // Создание и отображение окна Stream_window
+    adding_into_work *adding_work = new adding_into_work();
+    adding_work->show();
     this->close();
 }

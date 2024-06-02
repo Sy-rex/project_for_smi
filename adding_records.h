@@ -53,6 +53,7 @@ private slots:
     void onSecondButtonClicked();
     void onThirdButtonClicked();
     void onFourthButtonClicked();
+    void onFifthButtonClicked();
 
 private:
     Ui::adding_records *ui;

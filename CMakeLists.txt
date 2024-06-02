@@ -42,6 +42,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         ${PROJECT_SOURCES}
         databasemanger.h databasemanger.cpp databasemanger.ui
         tariffuserwindow.h tariffuserwindow.cpp tariffuserwindow.ui
+        adding_into_work.h adding_into_work.cpp adding_into_work.ui
     )
 else()
     if(ANDROID)

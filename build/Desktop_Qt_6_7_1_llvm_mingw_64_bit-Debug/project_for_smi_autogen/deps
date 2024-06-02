@@ -46,6 +46,8 @@ project_for_smi_autogen/timestamp: \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/adding_into_edition.h \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/adding_into_journal.cpp \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/adding_into_journal.h \
+	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/adding_into_work.cpp \
+	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/adding_into_work.h \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/adding_records.cpp \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/adding_records.h \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/author_search.cpp \
@@ -1259,6 +1261,7 @@ project_for_smi_autogen/timestamp: \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/adding_into_author.ui \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/adding_into_edition.ui \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/adding_into_journal.ui \
+	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/adding_into_work.ui \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/adding_records.ui \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/author_search.ui \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/hot_news.ui \

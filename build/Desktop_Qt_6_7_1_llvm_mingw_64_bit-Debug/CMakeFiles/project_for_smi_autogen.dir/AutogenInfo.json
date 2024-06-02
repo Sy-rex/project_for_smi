@@ -414,6 +414,12 @@
 			null
 		],
 		[
+			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/adding_into_work.h",
+			"MU",
+			"EWIEGA46WW/moc_adding_into_work.cpp",
+			null
+		],
+		[
 			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/adding_records.h",
 			"MU",
 			"EWIEGA46WW/moc_adding_records.cpp",
@@ -556,6 +562,11 @@
 		],
 		[
 			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/adding_into_journal.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/adding_into_work.cpp",
 			"MU",
 			null
 		],
