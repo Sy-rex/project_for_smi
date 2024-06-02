@@ -14,6 +14,9 @@ class ToggleLabel : public QLabel {
 public:
     ToggleLabel(QWidget *parent = nullptr);
 
+signals:
+    void toggledChanged(bool toggled);
+
 protected:
     void mousePressEvent(QMouseEvent *event) override;
 
@@ -62,12 +65,14 @@ protected:
     void paintEvent(QPaintEvent *event) override;
 
 private slots:
-    void openMainWindow();
+    void openMainWindow(bool m_toggled);
+    void onToggleLabelToggled(bool toggled);
 
 private:
     Ui::registration *ui;
     bool m_dragging = false;
     QPoint m_dragPosition;
+    bool m_toggled = false;
 };
 
 #endif // REGISTRATION_H

@@ -24,7 +24,7 @@ tariffuserwindow::tariffuserwindow(QWidget *parent)
     setWindowFlags(Qt::FramelessWindowHint);
 
     // Получаем экземпляр databasemanger и открываем базу данных
-    databasemanger& dbManager = databasemanger::instance();
+    databasemanger& dbManager = databasemanger::instance(false);
     if (dbManager.openDatabase())
     {
         // Создаем модель для отображения данных

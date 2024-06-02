@@ -11,6 +11,7 @@
 #include <QFont>
 #include <QLabel>
 #include <QLineEdit>
+#include <QComboBox>
 
 
 class CloseButton : public QPushButton {
@@ -136,6 +137,33 @@ adding_into_author::adding_into_author(QWidget *parent)
     label4->move(278,184);
     label4->setFont(font4);
     label4->installEventFilter(this);
+
+    QComboBox *comboBox = new QComboBox(this);
+    comboBox->setStyleSheet(
+        "QComboBox {"
+        "  border-radius: 10px;"
+        "  padding: 5px;"
+        "  background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #48DCB7, stop:1 #8599F3);"
+        "  color: #FFFFFF;"
+        "  font-family: 'Poppins';"
+        "}"
+        "QComboBox QAbstractItemView {"
+        "  background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #48DCB7, stop:1 #8599F3);"
+        "  color: #FFFFFF;"
+        "  selection-background-color: #555575;"
+        "  selection-color: #FFFFFF;"
+        "}"
+        "QComboBox::drop-down {"
+        "  border: none;"
+        "}"
+        );
+    comboBox->setFixedSize(160, 30);
+    comboBox->move(238, 230);
+
+    // Добавляем элементы в QComboBox
+    comboBox->addItem("Option 1");
+    comboBox->addItem("Option 2");
+    comboBox->addItem("Option 3");
 
     QLabel *label5 = new QLabel("РЕЙТИНГ", this);
     label5->setStyleSheet("color: #FFFFFF;");

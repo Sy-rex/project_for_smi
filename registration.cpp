@@ -2,6 +2,7 @@
 #include "ui_registration.h"
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "databasemanger.h"
 #include <QPalette>
 #include <QColor>
 #include <QApplication>
@@ -26,6 +27,7 @@ void ToggleLabel::mousePressEvent(QMouseEvent *event) {
             move(368, 401);
         }
         toggled = !toggled;
+        emit toggledChanged(toggled);
     }
 }
 
@@ -85,7 +87,9 @@ registration::registration(QWidget *parent)
     menuButton->setFont(font2);
     menuButton->setFixedSize(60, 30);
     menuButton->move(16, 12);
-    connect(menuButton, &QPushButton::clicked, this, &registration::openMainWindow);
+    connect(menuButton, &QPushButton::clicked, this, [=]() {openMainWindow(m_toggled);});
+
+
 
     CloseButton *closeButton = new CloseButton(this);
     closeButton->move(width() - closeButton->width() - 16, 16);
@@ -116,6 +120,8 @@ registration::registration(QWidget *parent)
 
     // Используем новый класс ToggleLabel для imageLabel4
     ToggleLabel *imageLabel4 = new ToggleLabel(this);
+    connect(imageLabel4, &ToggleLabel::toggledChanged, this, &registration::onToggleLabelToggled);
+
     QPixmap pixmap4(":/register_pill.png");
     pixmap4.setDevicePixelRatio(devicePixelRatio());
     imageLabel4->setPixmap(pixmap4);
@@ -142,8 +148,12 @@ void registration::paintEvent(QPaintEvent *event) {
     painter.setFont(customFont);
 }
 
-void registration::openMainWindow() {
+void registration::openMainWindow(bool m_toggled) {
+    databasemanger::instance(m_toggled).setToggled(m_toggled);
     MainWindow *mainWindow = new MainWindow;
     mainWindow->show();
     this->close();
+}
+void registration::onToggleLabelToggled(bool toggled) {
+    m_toggled = toggled;
 }

@@ -36,7 +36,10 @@ namespace {
 #ifdef QT_MOC_HAS_STRINGDATA
 struct qt_meta_stringdata_CLASSToggleLabelENDCLASS_t {};
 constexpr auto qt_meta_stringdata_CLASSToggleLabelENDCLASS = QtMocHelpers::stringData(
-    "ToggleLabel"
+    "ToggleLabel",
+    "toggledChanged",
+    "",
+    "toggled"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -49,12 +52,18 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSToggleLabelENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-       0,    0, // methods
+       1,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       0,       // signalCount
+       1,       // signalCount
+
+ // signals: name, argc, parameters, tag, flags, initial metatype offsets
+       1,    1,   20,    2, 0x06,    1 /* Public */,
+
+ // signals: parameters
+    QMetaType::Void, QMetaType::Bool,    3,
 
        0        // eod
 };
@@ -67,17 +76,33 @@ Q_CONSTINIT const QMetaObject ToggleLabel::staticMetaObject = { {
     nullptr,
     qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSToggleLabelENDCLASS_t,
         // Q_OBJECT / Q_GADGET
-        QtPrivate::TypeAndForceComplete<ToggleLabel, std::true_type>
+        QtPrivate::TypeAndForceComplete<ToggleLabel, std::true_type>,
+        // method 'toggledChanged'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<bool, std::false_type>
     >,
     nullptr
 } };
 
 void ToggleLabel::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    (void)_o;
-    (void)_id;
-    (void)_c;
-    (void)_a;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        auto *_t = static_cast<ToggleLabel *>(_o);
+        (void)_t;
+        switch (_id) {
+        case 0: _t->toggledChanged((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
+        default: ;
+        }
+    } else if (_c == QMetaObject::IndexOfMethod) {
+        int *result = reinterpret_cast<int *>(_a[0]);
+        {
+            using _t = void (ToggleLabel::*)(bool );
+            if (_t _q_method = &ToggleLabel::toggledChanged; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+                *result = 0;
+                return;
+            }
+        }
+    }
 }
 
 const QMetaObject *ToggleLabel::metaObject() const
@@ -96,7 +121,25 @@ void *ToggleLabel::qt_metacast(const char *_clname)
 int ToggleLabel::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QLabel::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        if (_id < 1)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 1;
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        if (_id < 1)
+            *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
+        _id -= 1;
+    }
     return _id;
+}
+
+// SIGNAL 0
+void ToggleLabel::toggledChanged(bool _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 namespace {
 
@@ -105,7 +148,10 @@ struct qt_meta_stringdata_CLASSregistrationENDCLASS_t {};
 constexpr auto qt_meta_stringdata_CLASSregistrationENDCLASS = QtMocHelpers::stringData(
     "registration",
     "openMainWindow",
-    ""
+    "",
+    "m_toggled",
+    "onToggleLabelToggled",
+    "toggled"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -118,7 +164,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSregistrationENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-       1,   14, // methods
+       2,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -126,10 +172,12 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSregistrationENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   20,    2, 0x08,    1 /* Private */,
+       1,    1,   26,    2, 0x08,    1 /* Private */,
+       4,    1,   29,    2, 0x08,    3 /* Private */,
 
  // slots: parameters
-    QMetaType::Void,
+    QMetaType::Void, QMetaType::Bool,    3,
+    QMetaType::Void, QMetaType::Bool,    5,
 
        0        // eod
 };
@@ -144,7 +192,11 @@ Q_CONSTINIT const QMetaObject registration::staticMetaObject = { {
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<registration, std::true_type>,
         // method 'openMainWindow'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<bool, std::false_type>,
+        // method 'onToggleLabelToggled'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<bool, std::false_type>
     >,
     nullptr
 } };
@@ -155,11 +207,11 @@ void registration::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         auto *_t = static_cast<registration *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->openMainWindow(); break;
+        case 0: _t->openMainWindow((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
+        case 1: _t->onToggleLabelToggled((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
         default: ;
         }
     }
-    (void)_a;
 }
 
 const QMetaObject *registration::metaObject() const
@@ -181,13 +233,13 @@ int registration::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 1)
+        if (_id < 2)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 1;
+        _id -= 2;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 1)
+        if (_id < 2)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 1;
+        _id -= 2;
     }
     return _id;
 }

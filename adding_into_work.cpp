@@ -10,6 +10,7 @@
 #include <QMouseEvent>
 #include <QFont>
 #include <QLabel>
+#include <QComboBox>
 
 
 class CloseButton : public QPushButton {
@@ -114,12 +115,66 @@ adding_into_work::adding_into_work(QWidget *parent)
     label3->setFont(font4);
     label3->installEventFilter(this);
 
+    QComboBox *comboBox = new QComboBox(this);
+    comboBox->setStyleSheet(
+        "QComboBox {"
+        "  border-radius: 10px;"
+        "  padding: 5px;"
+        "  background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #48DCB7, stop:1 #8599F3);"
+        "  color: #FFFFFF;"
+        "  font-family: 'Poppins';"
+        "}"
+        "QComboBox QAbstractItemView {"
+        "  background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #48DCB7, stop:1 #8599F3);"
+        "  color: #FFFFFF;"
+        "  selection-background-color: #555575;"
+        "  selection-color: #FFFFFF;"
+        "}"
+        "QComboBox::drop-down {"
+        "  border: none;"
+        "}"
+        );
+    comboBox->setFixedSize(160, 30);
+    comboBox->move(102, 230);
+
+    // Добавляем элементы в QComboBox
+    comboBox->addItem("Option 1");
+    comboBox->addItem("Option 2");
+    comboBox->addItem("Option 3");
+
     QLabel *label4 = new QLabel("АВТОР", this);
     label4->setStyleSheet("color: #FFFFFF;");
     label4->setFixedSize(100, 30);
     label4->move(420, 184);
     label4->setFont(font4);
     label4->installEventFilter(this);
+
+    QComboBox *comboBox2 = new QComboBox(this);
+    comboBox2->setStyleSheet(
+        "QComboBox {"
+        "  border-radius: 10px;"
+        "  padding: 5px;"
+        "  background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #48DCB7, stop:1 #8599F3);"
+        "  color: #FFFFFF;"
+        "  font-family: 'Poppins';"
+        "}"
+        "QComboBox QAbstractItemView {"
+        "  background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #48DCB7, stop:1 #8599F3);"
+        "  color: #FFFFFF;"
+        "  selection-background-color: #555575;"
+        "  selection-color: #FFFFFF;"
+        "}"
+        "QComboBox::drop-down {"
+        "  border: none;"
+        "}"
+        );
+    comboBox2->setFixedSize(160, 30);
+    comboBox2->move(366, 230);
+
+    // Добавляем элементы в QComboBox
+    comboBox2->addItem("Option 1");
+    comboBox2->addItem("Option 2");
+    comboBox2->addItem("Option 3");
 
     QPushButton *imageButton2 = new QPushButton(this);
     imageButton2->setFlat(true);

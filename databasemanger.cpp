@@ -1,12 +1,30 @@
 #include "databasemanger.h"
+#include "registration.h"
+#include "QDebug"
 
-databasemanger::databasemanger()
+void databasemanger::setToggled(bool toggled) {
+    m_toggled = toggled;
+    qDebug() << "USER" << m_toggled;
+}
+
+databasemanger::databasemanger(bool m_toggled)
 {
-    m_db = QSqlDatabase::addDatabase("QPSQL");
-    m_db.setUserName("postgres");
-    m_db.setPassword("12345");
-    m_db.setDatabaseName("smi");
-    m_db.setHostName("localhost");
+    if (m_toggled)
+    {
+        qDebug() << "READER" << m_toggled;
+        m_db = QSqlDatabase::addDatabase("QPSQL");
+        m_db.setUserName("reader_user");
+        m_db.setPassword("12345");
+        m_db.setDatabaseName("smi");
+        m_db.setHostName("localhost");
+    } else {
+        qDebug() << "EDITOR" << m_toggled;
+        m_db = QSqlDatabase::addDatabase("QPSQL");
+        m_db.setUserName("editor_user");
+        m_db.setPassword("12345");
+        m_db.setDatabaseName("smi");
+        m_db.setHostName("localhost");
+    }
 }
 
 databasemanger::~databasemanger()
@@ -16,9 +34,9 @@ databasemanger::~databasemanger()
     }
 }
 
-databasemanger& databasemanger::instance()
+databasemanger& databasemanger::instance(bool m_toggled)
 {
-    static databasemanger instance;
+    static databasemanger instance(m_toggled);
     return instance;
 }
 
