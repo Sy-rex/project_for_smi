@@ -6,6 +6,7 @@
 #include <QPainter>
 #include <QPainterPath>
 #include <QMouseEvent>
+#include <QComboBox>
 
 namespace Ui {
 class adding_into_article;
@@ -49,11 +50,13 @@ protected:
 
 private slots:
     void openMainWindow();
+    void loadComboBoxData(QComboBox *comboBox);
 
 private:
     Ui::adding_into_article *ui;
     bool m_dragging = false;
     QPoint m_dragPosition;
+    QComboBox *comboBox;
 };
 
 #endif // ADDING_INTO_ARTICLE_H

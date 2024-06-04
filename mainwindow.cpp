@@ -3,7 +3,7 @@
 #include "author_search.h"
 #include "update_data.h"
 #include "adding_records.h"
-#include "tariffuserwindow.h"
+#include "select_from_article.h"
 #include "hot_news.h"
 #include <QPalette>
 #include <QColor>
@@ -366,7 +366,7 @@ void MainWindow::onFifthButtonClicked()
 void MainWindow::onFourthButtonClicked()
 {
     // Создание и отображение окна Stream_window
-    tariffuserwindow *hot_news3 = new tariffuserwindow();
+    select_from_article *hot_news3 = new select_from_article();
     hot_news3->show();
     this->close();
 }

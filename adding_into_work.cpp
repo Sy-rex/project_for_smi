@@ -2,6 +2,7 @@
 #include "ui_adding_into_work.h"
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "databasemanger.h"
 #include <QPalette>
 #include <QColor>
 #include <QApplication>
@@ -11,6 +12,11 @@
 #include <QFont>
 #include <QLabel>
 #include <QComboBox>
+#include <QMessageBox>
+#include <QSqlQuery>
+#include <QSqlError>
+#include <QVariant>
+#include <QSqlDatabase>
 
 
 class CloseButton : public QPushButton {
@@ -116,6 +122,7 @@ adding_into_work::adding_into_work(QWidget *parent)
     label3->installEventFilter(this);
 
     QComboBox *comboBox = new QComboBox(this);
+    comboBox->setMaxVisibleItems(5);
     comboBox->setStyleSheet(
         "QComboBox {"
         "  border-radius: 10px;"
@@ -129,18 +136,37 @@ adding_into_work::adding_into_work(QWidget *parent)
         "  color: #FFFFFF;"
         "  selection-background-color: #555575;"
         "  selection-color: #FFFFFF;"
+        "  border: none;"
         "}"
         "QComboBox::drop-down {"
         "  border: none;"
         "}"
+        "QScrollBar:vertical {"
+        "  border: none;"
+        "  background: transparent;"
+        "  width: 10px;"
+        "  margin: 0px 0px 0px 0px;"
+        "}"
+        "QScrollBar::handle:vertical {"
+        "  background: #F23878;"  // Устанавливаем цвет ползунка на красный
+        "  min-height: 20px;"
+        "  border-radius: 5px;"
+        "}"
+        "QComboBox QScrollBar::add-line:vertical,"
+        "QComboBox QScrollBar::sub-line:vertical {"
+        "  border: none;"
+        "  background: none;"
+        "}"
+        "QComboBox QScrollBar::add-page:vertical,"
+        "QComboBox QScrollBar::sub-page:vertical {"
+        "  background: none;"
+        "}"
         );
     comboBox->setFixedSize(160, 30);
     comboBox->move(102, 230);
-
-    // Добавляем элементы в QComboBox
-    comboBox->addItem("Option 1");
-    comboBox->addItem("Option 2");
-    comboBox->addItem("Option 3");
+    comboBox->setPlaceholderText("Выберите статью");
+    comboBox->setFocus();
+    loadComboBoxData(comboBox);
 
     QLabel *label4 = new QLabel("АВТОР", this);
     label4->setStyleSheet("color: #FFFFFF;");
@@ -150,6 +176,7 @@ adding_into_work::adding_into_work(QWidget *parent)
     label4->installEventFilter(this);
 
     QComboBox *comboBox2 = new QComboBox(this);
+    comboBox2->setMaxVisibleItems(5);
     comboBox2->setStyleSheet(
         "QComboBox {"
         "  border-radius: 10px;"
@@ -163,18 +190,37 @@ adding_into_work::adding_into_work(QWidget *parent)
         "  color: #FFFFFF;"
         "  selection-background-color: #555575;"
         "  selection-color: #FFFFFF;"
+        "  border: none;"
         "}"
         "QComboBox::drop-down {"
         "  border: none;"
         "}"
+        "QScrollBar:vertical {"
+        "  border: none;"
+        "  background: transparent;"
+        "  width: 10px;"
+        "  margin: 0px 0px 0px 0px;"
+        "}"
+        "QScrollBar::handle:vertical {"
+        "  background: #F23878;"  // Устанавливаем цвет ползунка на красный
+        "  min-height: 20px;"
+        "  border-radius: 5px;"
+        "}"
+        "QComboBox QScrollBar::add-line:vertical,"
+        "QComboBox QScrollBar::sub-line:vertical {"
+        "  border: none;"
+        "  background: none;"
+        "}"
+        "QComboBox QScrollBar::add-page:vertical,"
+        "QComboBox QScrollBar::sub-page:vertical {"
+        "  background: none;"
+        "}"
         );
     comboBox2->setFixedSize(160, 30);
     comboBox2->move(366, 230);
-
-    // Добавляем элементы в QComboBox
-    comboBox2->addItem("Option 1");
-    comboBox2->addItem("Option 2");
-    comboBox2->addItem("Option 3");
+    comboBox2->setPlaceholderText("Выберите автора");
+    comboBox2->setFocus();
+    loadComboBoxData2(comboBox2);
 
     QPushButton *imageButton2 = new QPushButton(this);
     imageButton2->setFlat(true);
@@ -228,4 +274,56 @@ void adding_into_work::openMainWindow()
     mainWindow->show();
 
     this->close();
+}
+
+void adding_into_work::loadComboBoxData(QComboBox *comboBox) {
+    databasemanger& dbManager = databasemanger::instance(false);
+    if (dbManager.openDatabase()) {
+        QSqlQuery query(dbManager.database());
+        query.prepare("SELECT id, name FROM article ORDER BY name;");
+
+        if (!query.exec()) {
+            qDebug() << "SQL Query:" << query.lastQuery();
+            qDebug() << "Error:" << query.lastError().text();
+            QMessageBox::critical(this, "Ошибка базы данных", "Не удалось выполнить запрос: " + query.lastError().text());
+            return;
+        }
+        comboBox->clear();
+
+        while (query.next()) {
+            int journal_id = query.value(0).toInt();
+            QString name_journal = query.value(1).toString();
+            comboBox->addItem(name_journal, journal_id);
+        }
+        comboBox->setCurrentIndex(-1); // Устанавливаем пустое значение по умолчанию
+
+    } else {
+        qDebug() << "Failed to open database";
+    }
+}
+
+void adding_into_work::loadComboBoxData2(QComboBox *comboBox2) {
+    databasemanger& dbManager = databasemanger::instance(false);
+    if (dbManager.openDatabase()) {
+        QSqlQuery query(dbManager.database());
+        query.prepare("SELECT id, fullname FROM authors ORDER BY fullname;");
+
+        if (!query.exec()) {
+            qDebug() << "SQL Query:" << query.lastQuery();
+            qDebug() << "Error:" << query.lastError().text();
+            QMessageBox::critical(this, "Ошибка базы данных", "Не удалось выполнить запрос: " + query.lastError().text());
+            return;
+        }
+        comboBox2->clear();
+
+        while (query.next()) {
+            int journal_id = query.value(0).toInt();
+            QString name_journal = query.value(1).toString();
+            comboBox2->addItem(name_journal, journal_id);
+        }
+        comboBox2->setCurrentIndex(-1); // Устанавливаем пустое значение по умолчанию
+
+    } else {
+        qDebug() << "Failed to open database";
+    }
 }

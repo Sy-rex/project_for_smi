@@ -9,6 +9,7 @@ C:/ProgramData/QtCreator/Links/0d7854161733bae1a5c351db673c543d/project_for_smi_
   D:/QT/6.7.1/llvm-mingw_64/include/QtCore/q20memory.h \
   D:/QT/6.7.1/llvm-mingw_64/include/QtCore/q20type_traits.h \
   D:/QT/6.7.1/llvm-mingw_64/include/QtCore/q23utility.h \
+  D:/QT/6.7.1/llvm-mingw_64/include/QtCore/qabstractitemmodel.h \
   D:/QT/6.7.1/llvm-mingw_64/include/QtCore/qalgorithms.h \
   D:/QT/6.7.1/llvm-mingw_64/include/QtCore/qanystringview.h \
   D:/QT/6.7.1/llvm-mingw_64/include/QtCore/qarraydata.h \
@@ -84,6 +85,7 @@ C:/ProgramData/QtCreator/Links/0d7854161733bae1a5c351db673c543d/project_for_smi_
   D:/QT/6.7.1/llvm-mingw_64/include/QtCore/qprocessordetection.h \
   D:/QT/6.7.1/llvm-mingw_64/include/QtCore/qrect.h \
   D:/QT/6.7.1/llvm-mingw_64/include/QtCore/qrefcount.h \
+  D:/QT/6.7.1/llvm-mingw_64/include/QtCore/qregularexpression.h \
   D:/QT/6.7.1/llvm-mingw_64/include/QtCore/qscopedpointer.h \
   D:/QT/6.7.1/llvm-mingw_64/include/QtCore/qscopeguard.h \
   D:/QT/6.7.1/llvm-mingw_64/include/QtCore/qset.h \
@@ -172,14 +174,26 @@ C:/ProgramData/QtCreator/Links/0d7854161733bae1a5c351db673c543d/project_for_smi_
   D:/QT/6.7.1/llvm-mingw_64/include/QtGui/qtguiexports.h \
   D:/QT/6.7.1/llvm-mingw_64/include/QtGui/qtguiglobal.h \
   D:/QT/6.7.1/llvm-mingw_64/include/QtGui/qtransform.h \
+  D:/QT/6.7.1/llvm-mingw_64/include/QtGui/qvalidator.h \
   D:/QT/6.7.1/llvm-mingw_64/include/QtGui/qvector2d.h \
   D:/QT/6.7.1/llvm-mingw_64/include/QtGui/qvectornd.h \
   D:/QT/6.7.1/llvm-mingw_64/include/QtGui/qwindowdefs.h \
   D:/QT/6.7.1/llvm-mingw_64/include/QtGui/qwindowdefs_win.h \
+  D:/QT/6.7.1/llvm-mingw_64/include/QtWidgets/QComboBox \
   D:/QT/6.7.1/llvm-mingw_64/include/QtWidgets/QMainWindow \
   D:/QT/6.7.1/llvm-mingw_64/include/QtWidgets/QWidget \
+  D:/QT/6.7.1/llvm-mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+  D:/QT/6.7.1/llvm-mingw_64/include/QtWidgets/qabstractslider.h \
+  D:/QT/6.7.1/llvm-mingw_64/include/QtWidgets/qabstractspinbox.h \
+  D:/QT/6.7.1/llvm-mingw_64/include/QtWidgets/qcombobox.h \
+  D:/QT/6.7.1/llvm-mingw_64/include/QtWidgets/qframe.h \
   D:/QT/6.7.1/llvm-mingw_64/include/QtWidgets/qmainwindow.h \
+  D:/QT/6.7.1/llvm-mingw_64/include/QtWidgets/qrubberband.h \
   D:/QT/6.7.1/llvm-mingw_64/include/QtWidgets/qsizepolicy.h \
+  D:/QT/6.7.1/llvm-mingw_64/include/QtWidgets/qslider.h \
+  D:/QT/6.7.1/llvm-mingw_64/include/QtWidgets/qstyle.h \
+  D:/QT/6.7.1/llvm-mingw_64/include/QtWidgets/qstyleoption.h \
+  D:/QT/6.7.1/llvm-mingw_64/include/QtWidgets/qtabbar.h \
   D:/QT/6.7.1/llvm-mingw_64/include/QtWidgets/qtabwidget.h \
   D:/QT/6.7.1/llvm-mingw_64/include/QtWidgets/qtwidgets-config.h \
   D:/QT/6.7.1/llvm-mingw_64/include/QtWidgets/qtwidgetsexports.h \

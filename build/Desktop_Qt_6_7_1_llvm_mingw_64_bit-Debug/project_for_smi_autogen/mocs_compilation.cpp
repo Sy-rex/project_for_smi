@@ -9,5 +9,6 @@
 #include "EWIEGA46WW/moc_hot_news.cpp"
 #include "EWIEGA46WW/moc_mainwindow.cpp"
 #include "EWIEGA46WW/moc_registration.cpp"
+#include "EWIEGA46WW/moc_select_from_article.cpp"
 #include "EWIEGA46WW/moc_tariffuserwindow.cpp"
 #include "EWIEGA46WW/moc_update_data.cpp"

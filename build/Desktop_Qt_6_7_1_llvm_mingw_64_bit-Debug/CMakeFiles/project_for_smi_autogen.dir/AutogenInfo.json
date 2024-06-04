@@ -456,6 +456,12 @@
 			null
 		],
 		[
+			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/select_from_article.h",
+			"MU",
+			"EWIEGA46WW/moc_select_from_article.cpp",
+			null
+		],
+		[
 			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/tariffuserwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_tariffuserwindow.cpp",
@@ -602,6 +608,11 @@
 		],
 		[
 			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/registration.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/select_from_article.cpp",
 			"MU",
 			null
 		],

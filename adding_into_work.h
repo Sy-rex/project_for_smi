@@ -6,6 +6,7 @@
 #include <QPainter>
 #include <QPainterPath>
 #include <QMouseEvent>
+#include <QComboBox>
 
 namespace Ui {
 class adding_into_work;
@@ -49,11 +50,15 @@ protected:
 
 private slots:
     void openMainWindow();
+    void loadComboBoxData(QComboBox *comboBox);
+    void loadComboBoxData2(QComboBox *comboBox2);
 
 private:
     Ui::adding_into_work *ui;
     bool m_dragging = false;
     QPoint m_dragPosition;
+    QComboBox *comboBox;
+    QComboBox *comboBox2;
 };
 
 #endif // ADDING_INTO_WORK_H

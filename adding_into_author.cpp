@@ -2,6 +2,7 @@
 #include "ui_adding_into_author.h"
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "databasemanger.h"
 #include <QPalette>
 #include <QColor>
 #include <QApplication>
@@ -12,6 +13,11 @@
 #include <QLabel>
 #include <QLineEdit>
 #include <QComboBox>
+#include <QMessageBox>
+#include <QSqlQuery>
+#include <QSqlError>
+#include <QVariant>
+#include <QSqlDatabase>
 
 
 class CloseButton : public QPushButton {
@@ -139,6 +145,7 @@ adding_into_author::adding_into_author(QWidget *parent)
     label4->installEventFilter(this);
 
     QComboBox *comboBox = new QComboBox(this);
+    comboBox->setMaxVisibleItems(5);
     comboBox->setStyleSheet(
         "QComboBox {"
         "  border-radius: 10px;"
@@ -152,18 +159,38 @@ adding_into_author::adding_into_author(QWidget *parent)
         "  color: #FFFFFF;"
         "  selection-background-color: #555575;"
         "  selection-color: #FFFFFF;"
+        "  border: none;"
         "}"
         "QComboBox::drop-down {"
         "  border: none;"
+        "}"
+        "QScrollBar:vertical {"
+        "  border: none;"
+        "  background: transparent;"
+        "  width: 10px;"
+        "  margin: 0px 0px 0px 0px;"
+        "}"
+        "QScrollBar::handle:vertical {"
+        "  background: #F23878;"  // Устанавливаем цвет ползунка на красный
+        "  min-height: 20px;"
+        "  border-radius: 5px;"
+        "}"
+        "QComboBox QScrollBar::add-line:vertical,"
+        "QComboBox QScrollBar::sub-line:vertical {"
+        "  border: none;"
+        "  background: none;"
+        "}"
+        "QComboBox QScrollBar::add-page:vertical,"
+        "QComboBox QScrollBar::sub-page:vertical {"
+        "  background: none;"
         "}"
         );
     comboBox->setFixedSize(160, 30);
     comboBox->move(238, 230);
 
-    // Добавляем элементы в QComboBox
-    comboBox->addItem("Option 1");
-    comboBox->addItem("Option 2");
-    comboBox->addItem("Option 3");
+    comboBox->setPlaceholderText("Выберите издание");
+    comboBox->setFocus();
+    loadComboBoxData(comboBox);
 
     QLabel *label5 = new QLabel("РЕЙТИНГ", this);
     label5->setStyleSheet("color: #FFFFFF;");
@@ -239,4 +266,30 @@ void adding_into_author::openMainWindow()
     mainWindow->show();
 
     this->close();
+}
+
+void adding_into_author::loadComboBoxData(QComboBox *comboBox) {
+    databasemanger& dbManager = databasemanger::instance(false);
+    if (dbManager.openDatabase()) {
+        QSqlQuery query(dbManager.database());
+        query.prepare("SELECT id, name FROM edition ORDER BY name;");
+
+        if (!query.exec()) {
+            qDebug() << "SQL Query:" << query.lastQuery();
+            qDebug() << "Error:" << query.lastError().text();
+            QMessageBox::critical(this, "Ошибка базы данных", "Не удалось выполнить запрос: " + query.lastError().text());
+            return;
+        }
+        comboBox->clear();
+
+        while (query.next()) {
+            int edition_id = query.value(0).toInt();
+            QString name_edition = query.value(1).toString();
+            comboBox->addItem(name_edition, edition_id);
+        }
+        comboBox->setCurrentIndex(-1); // Устанавливаем пустое значение по умолчанию
+
+    } else {
+        qDebug() << "Failed to open database";
+    }
 }
