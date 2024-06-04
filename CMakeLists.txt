@@ -50,6 +50,12 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         deleting_into_article.h deleting_into_article.cpp deleting_into_article.ui
         deleting_into_edition.h deleting_into_edition.cpp deleting_into_edition.ui
         deleting_into_work.h deleting_into_work.cpp deleting_into_work.ui
+        updating_records.h updating_records.cpp updating_records.ui
+        updating_into_article.h updating_into_article.cpp updating_into_article.ui
+        updating_into_author.h updating_into_author.cpp updating_into_author.ui
+        updating_into_edition.h updating_into_edition.cpp updating_into_edition.ui
+        updating_into_journal.h updating_into_journal.cpp updating_into_journal.ui
+        updating_into_work.h updating_into_work.cpp updating_into_work.ui
     )
 else()
     if(ANDROID)

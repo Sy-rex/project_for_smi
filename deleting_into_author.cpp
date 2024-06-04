@@ -116,10 +116,12 @@ deleting_into_author::deleting_into_author(QWidget *parent)
     if (dbManager.openDatabase())
     {
         // Создаем модель для отображения данных
-        QSqlTableModel *model = new QSqlTableModel(this, dbManager.database());
-        //CustomSqlTableModel *model = new CustomSqlTableModel(this, dbManager.database());
-        model->setTable("authors");
-        model->select();
+        QSqlQueryModel *model = new QSqlQueryModel(this);
+
+        // Выполняем запрос для получения данных из article с именем журнала
+        model->setQuery("SELECT authors.id, authors.fullname AS \"Автор\", edition.name AS \"Издание\", authors.rating AS \"Рейтинг\" "
+                        "FROM authors "
+                        "LEFT JOIN edition ON authors.edition_id = edition.id");
 
         // Устанавливаем режим растягивания столбцов
         ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
@@ -128,7 +130,7 @@ deleting_into_author::deleting_into_author(QWidget *parent)
         ui->tableView->setModel(model);
         ui->tableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
-        // Скрываем столбец tariff_id
+        // Скрываем столбец id
         ui->tableView->hideColumn(0);
 
         // Устанавливаем режим растягивания столбцов
@@ -182,8 +184,124 @@ void deleting_into_author::openMainWindow()
     this->close();
 }
 void deleting_into_author::deleteRecord(QModelIndex index) {
-    // Логика для удаления записи
+    if (!index.isValid()) return;
+
+    QSqlQueryModel *model = qobject_cast<QSqlQueryModel *>(ui->tableView->model());
+    if (!model) return;
+
+    int row = index.row();
+    QVariant id = model->data(model->index(row, 0)); // Получаем id из первого столбца
+
+    qDebug() << "Attempting to delete record with id:" << id;
+
+    QMessageBox msgBox;
+    msgBox.setWindowTitle("Удаление записи");
+    msgBox.setText("Вы уверены, что хотите удалить эту запись?");
+    msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+    msgBox.setDefaultButton(QMessageBox::No);
+    msgBox.setStyleSheet(
+        "QMessageBox {"
+        "    background-color: #222338;"
+        "    color: #FFFFFF;"
+        "}"
+        "QMessageBox QLabel {"
+        "    color: #FFFFFF;"
+        "    font: 14px 'Poppins SemiBold';"
+        "}"
+        "QMessageBox QPushButton {"
+        "    background-color: #373752;"
+        "    color: #FFFFFF;"
+        "    font: 12px 'Poppins SemiBold';"
+        "    padding: 5px 10px;"
+        "    border-radius: 5px;"
+        "}"
+        "QMessageBox QPushButton:hover {"
+        "    background-color: #4E4E6D;"
+        "}"
+        );
+
+    if (msgBox.exec() == QMessageBox::Yes) {
+        QSqlQuery query;
+
+        // Удаление связанных записей из article_authors
+        query.prepare("DELETE FROM article_authors WHERE author_id = :id");
+        query.bindValue(":id", id);
+        if (!query.exec()) {
+            qDebug() << "Error deleting from article_authors:" << query.lastError();
+            showErrorMessageBox("Не удалось удалить связанные записи из таблицы article_authors.");
+            return;
+        }
+
+        // Удаление записи из authors
+        query.prepare("DELETE FROM authors WHERE id = :id");
+        query.bindValue(":id", id);
+        if (query.exec()) {
+            QMessageBox successBox;
+            successBox.setWindowTitle("Успех");
+            successBox.setText("Запись успешно удалена.");
+            successBox.setStyleSheet(
+                "QMessageBox {"
+                "    background-color: #222338;"
+                "    color: #FFFFFF;"
+                "}"
+                "QMessageBox QLabel {"
+                "    color: #FFFFFF;"
+                "    font: 14px 'Poppins SemiBold';"
+                "}"
+                "QMessageBox QPushButton {"
+                "    background-color: #373752;"
+                "    color: #FFFFFF;"
+                "    font: 12px 'Poppins SemiBold';"
+                "    padding: 5px 10px;"
+                "    border-radius: 5px;"
+                "}"
+                "QMessageBox QPushButton:hover {"
+                "    background-color: #4E4E6D;"
+                "}"
+                );
+            successBox.exec();
+
+            // Обновляем модель
+            QSqlQuery refreshQuery(databasemanger::instance(false).database());
+            refreshQuery.prepare("SELECT authors.id, authors.fullname AS \"Автор\", edition.name AS \"Издание\", authors.rating AS \"Рейтинг\" "
+                                 "FROM authors "
+                                 "LEFT JOIN edition ON authors.edition_id = edition.id");
+            refreshQuery.exec();
+            model->setQuery(refreshQuery);
+        } else {
+            qDebug() << "Error deleting from authors:" << query.lastError();
+            showErrorMessageBox("Не удалось удалить запись из таблицы authors.");
+        }
+    }
 }
+
+void deleting_into_author::showErrorMessageBox(const QString &message) {
+    QMessageBox errorBox;
+    errorBox.setWindowTitle("Ошибка");
+    errorBox.setText(message);
+    errorBox.setStyleSheet(
+        "QMessageBox {"
+        "    background-color: #222338;"
+        "    color: #FFFFFF;"
+        "}"
+        "QMessageBox QLabel {"
+        "    color: #FFFFFF;"
+        "    font: 14px 'Poppins SemiBold';"
+        "}"
+        "QMessageBox QPushButton {"
+        "    background-color: #373752;"
+        "    color: #FFFFFF;"
+        "    font: 12px 'Poppins SemiBold';"
+        "    padding: 5px 10px;"
+        "    border-radius: 5px;"
+        "}"
+        "QMessageBox QPushButton:hover {"
+        "    background-color: #4E4E6D;"
+        "}"
+        );
+    errorBox.exec();
+}
+
 void deleting_into_author::customMenuRequested(QPoint pos) {
     QModelIndex index = ui->tableView->indexAt(pos);
     if (!index.isValid())

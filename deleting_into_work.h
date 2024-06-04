@@ -53,6 +53,7 @@ private slots:
 public slots:
     void customMenuRequested(QPoint pos);
     void deleteRecord(QModelIndex index);
+    void showErrorMessageBox(const QString &message);
 
 private:
     Ui::deleting_into_work *ui;

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>updating_into_author</class>
+ <widget class="QWidget" name="updating_into_author">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>675</width>
+    <height>524</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QTableView" name="tableView">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>140</y>
+     <width>581</width>
+     <height>321</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QTableView {
+border: 4px solid #373752;
+border-radius: 10px;
+gridline-color: #FFFFFF; /* #6D55FF */
+background-color: #373752;
+}
+
+QTableView::item {
+background-color: #222338;
+font-family: Poppins; /* Установка шрифта */
+font-size: 15pt; /* Установка размера шрифта */
+color: white;
+}
+
+QTableView::item:selected {
+background-color: #A0A1A8; /* #6D55FF */
+color: white;
+}
+
+QTableView::item:focus {
+background-color: #373752; /* #6D55FF */
+color: white;
+}
+
+QHeaderView::section {
+background-color: #373752; /* #6D55FF */
+color: white;
+font-family: Poppins;
+font-size: 14pt;
+}
+
+QHeaderView::section:horizontal {
+border: none; /* убираем горизонтальные линии разделителя */
+}
+
+QHeaderView::section:vertical {
+border: none; /* убираем вертикальные линии разделителя */
+}
+
+QScrollBar:vertical {
+border: none;
+background: white; /* Можно изменить на цвет фона таблицы или окна */
+width: 7px; /* Уменьшенная ширина */
+margin: 0px; /* Если не нужно отступление от краев */
+border-radius: 2px; /* Уменьшенное закругление */
+}
+
+QScrollBar::handle:vertical {
+background: #F23878;
+min-height: 7px; /* Уменьшенная минимальная длина */
+border-radius: 2px; /* Уменьшенное закругление */
+}
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+background: #373752; /* Это изменит цвет фона неактивных частей ползунка */
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+border: none;
+background: none;
+width: 0px;
+height: 0px;
+}
+
+QScrollBar:horizontal {
+border: none;
+background: white; /* Можно изменить на цвет фона таблицы или окна */
+height: 7px; /* Уменьшенная высота */
+margin: 0px; /* Если не нужно отступление от краев */
+/*border-radius: 5px; /* Уменьшенное закругление */
+}
+
+QScrollBar::handle:horizontal {
+background: #373752;
+min-width: 10px; /* Уменьшенная минимальная длина */
+border-radius: 5px; /* Уменьшенное закругление */
+}
+
+QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
+background: #373752; /* Это изменит цвет фона неактивных частей ползунка */
+}</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

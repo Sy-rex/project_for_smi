@@ -115,26 +115,25 @@ deleting_into_work::deleting_into_work(QWidget *parent)
     databasemanger& dbManager = databasemanger::instance(false);
     if (dbManager.openDatabase())
     {
-        // Создаем модель для отображения данных
-        QSqlTableModel *model = new QSqlTableModel(this, dbManager.database());
-        //CustomSqlTableModel *model = new CustomSqlTableModel(this, dbManager.database());
-        model->setTable("article_authors");
-        model->select();
+        QSqlQueryModel *model = new QSqlQueryModel(this);
+        QSqlQuery query(dbManager.database());
+        query.prepare(
+                "SELECT article_authors.article_id, article_authors.author_id, article.name AS \"Статья\", authors.fullname AS \"Автор\" "
+                "FROM article_authors "
+                "LEFT JOIN article ON article_authors.article_id = article.id "
+                "LEFT JOIN authors ON article_authors.author_id = authors.id"
+            );
+        query.exec();
+        model->setQuery(query);
 
-        // Устанавливаем режим растягивания столбцов
         ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-
-        // Устанавливаем модель в tableView
         ui->tableView->setModel(model);
-
         ui->tableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
-
-        // Устанавливаем режим растягивания столбцов
+        ui->tableView->hideColumn(0);
+        ui->tableView->hideColumn(1);
         ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Interactive);
         ui->tableView->horizontalHeader()->setStretchLastSection(true);
 
-
-        // Устанавливаем равномерное начальное распределение ширины столбцов
         int columnCount = ui->tableView->horizontalHeader()->count();
         int tableWidth = ui->tableView->viewport()->width();
         int columnWidth = tableWidth / columnCount;
@@ -179,9 +178,122 @@ void deleting_into_work::openMainWindow()
 
     this->close();
 }
+
 void deleting_into_work::deleteRecord(QModelIndex index) {
-    // Логика для удаления записи
+    if (!index.isValid()) return;
+
+    QSqlQueryModel *model = qobject_cast<QSqlQueryModel *>(ui->tableView->model());
+    if (!model) return;
+
+    int row = index.row();
+    QVariant articleId = model->data(model->index(row, 0));
+    QVariant authorId = model->data(model->index(row, 1));
+
+    qDebug() << "Attempting to delete record with article_id:" << articleId << "and author_id:" << authorId;
+
+    QMessageBox msgBox;
+    msgBox.setWindowTitle("Удаление записи");
+    msgBox.setText("Вы уверены, что хотите удалить эту запись?");
+    msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+    msgBox.setDefaultButton(QMessageBox::No);
+    msgBox.setStyleSheet(
+        "QMessageBox {"
+        "    background-color: #222338;"
+        "    color: #FFFFFF;"
+        "}"
+        "QMessageBox QLabel {"
+        "    color: #FFFFFF;"
+        "    font: 14px 'Poppins SemiBold';"
+        "}"
+        "QMessageBox QPushButton {"
+        "    background-color: #373752;"
+        "    color: #FFFFFF;"
+        "    font: 12px 'Poppins SemiBold';"
+        "    padding: 5px 10px;"
+        "    border-radius: 5px;"
+        "}"
+        "QMessageBox QPushButton:hover {"
+        "    background-color: #4E4E6D;"
+        "}"
+        );
+
+    if (msgBox.exec() == QMessageBox::Yes) {
+        QSqlQuery query;
+
+        // Удаление записи из article_authors
+        query.prepare("DELETE FROM article_authors WHERE article_id = :article_id AND author_id = :author_id");
+        query.bindValue(":article_id", articleId);
+        query.bindValue(":author_id", authorId);
+        if (query.exec()) {
+            QMessageBox successBox;
+            successBox.setWindowTitle("Успех");
+            successBox.setText("Запись успешно удалена.");
+            successBox.setStyleSheet(
+                "QMessageBox {"
+                "    background-color: #222338;"
+                "    color: #FFFFFF;"
+                "}"
+                "QMessageBox QLabel {"
+                "    color: #FFFFFF;"
+                "    font: 14px 'Poppins SemiBold';"
+                "}"
+                "QMessageBox QPushButton {"
+                "    background-color: #373752;"
+                "    color: #FFFFFF;"
+                "    font: 12px 'Poppins SemiBold';"
+                "    padding: 5px 10px;"
+                "    border-radius: 5px;"
+                "}"
+                "QMessageBox QPushButton:hover {"
+                "    background-color: #4E4E6D;"
+                "}"
+                );
+            successBox.exec();
+
+            // Обновляем модель с JOIN
+            QSqlQuery refreshQuery(databasemanger::instance(false).database());
+            refreshQuery.prepare(
+                "SELECT article_authors.article_id, article_authors.author_id, article.name AS \"Статья\", authors.fullname AS \"Автор\" "
+                "FROM article_authors "
+                "LEFT JOIN article ON article_authors.article_id = article.id "
+                "LEFT JOIN authors ON article_authors.author_id = authors.id"
+                );
+            refreshQuery.exec();
+            model->setQuery(refreshQuery);
+        } else {
+            qDebug() << "Error deleting from article_authors:" << query.lastError();
+            showErrorMessageBox("Не удалось удалить запись из таблицы article_authors.");
+        }
+    }
 }
+
+void deleting_into_work::showErrorMessageBox(const QString &message) {
+    QMessageBox errorBox;
+    errorBox.setWindowTitle("Ошибка");
+    errorBox.setText(message);
+    errorBox.setStyleSheet(
+        "QMessageBox {"
+        "    background-color: #222338;"
+        "    color: #FFFFFF;"
+        "}"
+        "QMessageBox QLabel {"
+        "    color: #FFFFFF;"
+        "    font: 14px 'Poppins SemiBold';"
+        "}"
+        "QMessageBox QPushButton {"
+        "    background-color: #373752;"
+        "    color: #FFFFFF;"
+        "    font: 12px 'Poppins SemiBold';"
+        "    padding: 5px 10px;"
+        "    border-radius: 5px;"
+        "}"
+        "QMessageBox QPushButton:hover {"
+        "    background-color: #4E4E6D;"
+        "}"
+        );
+    errorBox.exec();
+}
+
 void deleting_into_work::customMenuRequested(QPoint pos) {
     QModelIndex index = ui->tableView->indexAt(pos);
     if (!index.isValid())

@@ -16,15 +16,15 @@
 
 ToggleLabel::ToggleLabel(QWidget *parent)
     : QLabel(parent), toggled(false) {
-    move(254, 401);
+    move(254, 403);
 }
 
 void ToggleLabel::mousePressEvent(QMouseEvent *event) {
     if (event->button() == Qt::LeftButton) {
         if (toggled) {
-            move(254, 401);
+            move(254, 403);
         } else {
-            move(368, 401);
+            move(370, 403);
         }
         toggled = !toggled;
         emit toggledChanged(toggled);

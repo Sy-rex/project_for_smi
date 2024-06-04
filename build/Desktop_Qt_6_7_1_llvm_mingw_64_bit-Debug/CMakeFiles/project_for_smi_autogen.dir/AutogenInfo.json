@@ -508,6 +508,42 @@
 			"MU",
 			"EWIEGA46WW/moc_update_data.cpp",
 			null
+		],
+		[
+			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_into_article.h",
+			"MU",
+			"EWIEGA46WW/moc_updating_into_article.cpp",
+			null
+		],
+		[
+			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_into_author.h",
+			"MU",
+			"EWIEGA46WW/moc_updating_into_author.cpp",
+			null
+		],
+		[
+			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_into_edition.h",
+			"MU",
+			"EWIEGA46WW/moc_updating_into_edition.cpp",
+			null
+		],
+		[
+			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_into_journal.h",
+			"MU",
+			"EWIEGA46WW/moc_updating_into_journal.cpp",
+			null
+		],
+		[
+			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_into_work.h",
+			"MU",
+			"EWIEGA46WW/moc_updating_into_work.cpp",
+			null
+		],
+		[
+			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_records.h",
+			"MU",
+			"EWIEGA46WW/moc_updating_records.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -689,6 +725,36 @@
 		],
 		[
 			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/update_data.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_into_article.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_into_author.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_into_edition.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_into_journal.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_into_work.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_records.cpp",
 			"MU",
 			null
 		]

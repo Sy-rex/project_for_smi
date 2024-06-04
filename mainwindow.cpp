@@ -4,7 +4,7 @@
 #include "update_data.h"
 #include "adding_records.h"
 #include "deleting_records.h"
-#include "select_from_article.h"
+#include "updating_records.h"
 #include "hot_news.h"
 #include <QPalette>
 #include <QColor>
@@ -256,7 +256,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     //something
     // Создаем виджет для отображения текста (например, QLabel)
-    QLabel *label7 = new QLabel("SOMETHING", this);
+    QLabel *label7 = new QLabel("UPDATING RECORDS", this);
     label7->setStyleSheet("color: #FFFFFF;");
     label7->setFixedSize(180,40);
     label7->move(416,313);
@@ -367,7 +367,7 @@ void MainWindow::onFifthButtonClicked()
 void MainWindow::onFourthButtonClicked()
 {
     // Создание и отображение окна Stream_window
-    select_from_article *hot_news3 = new select_from_article();
-    hot_news3->show();
+    updating_records *updating_records2 = new updating_records();
+    updating_records2->show();
     this->close();
 }

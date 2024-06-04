@@ -268,6 +268,8 @@ void adding_into_author::openMainWindow()
     this->close();
 }
 
+
+
 void adding_into_author::loadComboBoxData(QComboBox *comboBox) {
     databasemanger& dbManager = databasemanger::instance(false);
     if (dbManager.openDatabase()) {

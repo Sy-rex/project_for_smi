@@ -66,7 +66,7 @@ adding_records::adding_records(QWidget *parent)
     QLabel *label1 = new QLabel("ADDING RECORDS", this);
     label1->setStyleSheet("color: #FFFFFF;");
     label1->setFixedSize(300,40);
-    label1->move(200,80);
+    label1->move(195,80);
 
     // Устанавливаем установленный шрифт для виджета, отображающего текст
     label1->setFont(font);
