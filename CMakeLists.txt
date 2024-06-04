@@ -44,6 +44,12 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         tariffuserwindow.h tariffuserwindow.cpp tariffuserwindow.ui
         adding_into_work.h adding_into_work.cpp adding_into_work.ui
         select_from_article.h select_from_article.cpp select_from_article.ui
+        deleting_records.h deleting_records.cpp deleting_records.ui
+        deleting_into_journal.h deleting_into_journal.cpp deleting_into_journal.ui
+        deleting_into_author.h deleting_into_author.cpp deleting_into_author.ui
+        deleting_into_article.h deleting_into_article.cpp deleting_into_article.ui
+        deleting_into_edition.h deleting_into_edition.cpp deleting_into_edition.ui
+        deleting_into_work.h deleting_into_work.cpp deleting_into_work.ui
     )
 else()
     if(ANDROID)

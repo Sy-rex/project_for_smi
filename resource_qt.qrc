@@ -43,5 +43,9 @@
         <file>update_long_back.png</file>
         <file>volume_music.png</file>
         <file>works.png</file>
+        <file>description_article_edit.png</file>
+        <file>description_author_edit.png</file>
+        <file>description_edition_edit.png</file>
+        <file>description_journal_edit.png</file>
     </qresource>
 </RCC>

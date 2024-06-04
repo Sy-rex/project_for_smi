@@ -438,6 +438,42 @@
 			null
 		],
 		[
+			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/deleting_into_article.h",
+			"MU",
+			"EWIEGA46WW/moc_deleting_into_article.cpp",
+			null
+		],
+		[
+			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/deleting_into_author.h",
+			"MU",
+			"EWIEGA46WW/moc_deleting_into_author.cpp",
+			null
+		],
+		[
+			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/deleting_into_edition.h",
+			"MU",
+			"EWIEGA46WW/moc_deleting_into_edition.cpp",
+			null
+		],
+		[
+			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/deleting_into_journal.h",
+			"MU",
+			"EWIEGA46WW/moc_deleting_into_journal.cpp",
+			null
+		],
+		[
+			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/deleting_into_work.h",
+			"MU",
+			"EWIEGA46WW/moc_deleting_into_work.cpp",
+			null
+		],
+		[
+			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/deleting_records.h",
+			"MU",
+			"EWIEGA46WW/moc_deleting_records.cpp",
+			null
+		],
+		[
 			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/hot_news.h",
 			"MU",
 			"EWIEGA46WW/moc_hot_news.cpp",
@@ -588,6 +624,36 @@
 		],
 		[
 			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/databasemanger.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/deleting_into_article.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/deleting_into_author.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/deleting_into_edition.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/deleting_into_journal.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/deleting_into_work.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/deleting_records.cpp",
 			"MU",
 			null
 		],

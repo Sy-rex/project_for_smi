@@ -3,6 +3,7 @@
 #include "author_search.h"
 #include "update_data.h"
 #include "adding_records.h"
+#include "deleting_records.h"
 #include "select_from_article.h"
 #include "hot_news.h"
 #include <QPalette>
@@ -181,7 +182,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     //author search
     // Создаем виджет для отображения текста (например, QLabel)
-    QLabel *label5 = new QLabel("AUTHOR SEARCH", this);
+    QLabel *label5 = new QLabel("DELETING RECORDS", this);
     label5->setStyleSheet("color: #FFFFFF;");
     label5->setFixedSize(180,40);
     label5->move(416,217);
@@ -342,8 +343,8 @@ void MainWindow::paintEvent(QPaintEvent *event)
 void MainWindow::onSecondButtonClicked()
 {
     // Создание и отображение окна Stream_window
-    author_search *author_search2 = new author_search();
-    author_search2->show();
+    deleting_records *deleting_records2 = new deleting_records();
+    deleting_records2->show();
     this->close();
 }
 

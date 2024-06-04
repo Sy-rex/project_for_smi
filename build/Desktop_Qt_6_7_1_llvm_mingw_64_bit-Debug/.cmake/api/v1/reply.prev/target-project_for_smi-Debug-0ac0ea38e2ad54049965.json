@@ -84,13 +84,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 77,
+				"line" : 82,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 61,
+				"line" : 66,
 				"parent" : 0
 			},
 			{
@@ -553,7 +553,12 @@
 				37,
 				40,
 				43,
-				60
+				46,
+				49,
+				52,
+				55,
+				58,
+				80
 			]
 		}
 	],
@@ -720,7 +725,12 @@
 				37,
 				40,
 				43,
-				60
+				46,
+				49,
+				52,
+				55,
+				58,
+				80
 			]
 		},
 		{
@@ -742,19 +752,29 @@
 				39,
 				42,
 				45,
-				46,
-				47,
 				48,
-				49,
-				50,
 				51,
-				52,
-				53,
 				54,
-				55,
-				56,
 				57,
-				58
+				60,
+				61,
+				62,
+				63,
+				64,
+				65,
+				66,
+				67,
+				68,
+				69,
+				70,
+				71,
+				72,
+				73,
+				74,
+				75,
+				76,
+				77,
+				78
 			]
 		},
 		{
@@ -776,15 +796,20 @@
 				38,
 				41,
 				44,
-				59
+				47,
+				50,
+				53,
+				56,
+				59,
+				79
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				61,
-				62
+				81,
+				82
 			]
 		}
 	],
@@ -1033,6 +1058,86 @@
 			"sourceGroupIndex" : 2
 		},
 		{
+			"backtrace" : 4,
+			"path" : "deleting_records.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "deleting_records.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "deleting_records.ui",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"path" : "deleting_into_journal.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "deleting_into_journal.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "deleting_into_journal.ui",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"path" : "deleting_into_author.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "deleting_into_author.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "deleting_into_author.ui",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"path" : "deleting_into_article.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "deleting_into_article.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "deleting_into_article.ui",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"path" : "deleting_into_edition.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "deleting_into_edition.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "deleting_into_edition.ui",
+			"sourceGroupIndex" : 2
+		},
+		{
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "C:/ProgramData/QtCreator/Links/0d7854161733bae1a5c351db673c543d/project_for_smi_autogen/include/ui_mainwindow.h",
@@ -1114,6 +1219,36 @@
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "C:/ProgramData/QtCreator/Links/0d7854161733bae1a5c351db673c543d/project_for_smi_autogen/include/ui_select_from_article.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "C:/ProgramData/QtCreator/Links/0d7854161733bae1a5c351db673c543d/project_for_smi_autogen/include/ui_deleting_records.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "C:/ProgramData/QtCreator/Links/0d7854161733bae1a5c351db673c543d/project_for_smi_autogen/include/ui_deleting_into_journal.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "C:/ProgramData/QtCreator/Links/0d7854161733bae1a5c351db673c543d/project_for_smi_autogen/include/ui_deleting_into_author.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "C:/ProgramData/QtCreator/Links/0d7854161733bae1a5c351db673c543d/project_for_smi_autogen/include/ui_deleting_into_article.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "C:/ProgramData/QtCreator/Links/0d7854161733bae1a5c351db673c543d/project_for_smi_autogen/include/ui_deleting_into_edition.h",
 			"sourceGroupIndex" : 1
 		},
 		{

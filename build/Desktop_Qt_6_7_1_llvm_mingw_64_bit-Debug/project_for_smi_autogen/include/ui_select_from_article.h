@@ -26,6 +26,7 @@ public:
     {
         if (select_from_article->objectName().isEmpty())
             select_from_article->setObjectName("select_from_article");
+        select_from_article->resize(641, 601);
         tableView = new QTableView(select_from_article);
         tableView->setObjectName("tableView");
         tableView->setGeometry(QRect(30, 140, 581, 321));

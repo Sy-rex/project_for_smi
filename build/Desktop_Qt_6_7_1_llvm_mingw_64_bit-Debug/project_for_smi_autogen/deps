@@ -54,6 +54,18 @@ project_for_smi_autogen/timestamp: \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/author_search.h \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/databasemanger.cpp \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/databasemanger.h \
+	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/deleting_into_article.cpp \
+	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/deleting_into_article.h \
+	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/deleting_into_author.cpp \
+	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/deleting_into_author.h \
+	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/deleting_into_edition.cpp \
+	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/deleting_into_edition.h \
+	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/deleting_into_journal.cpp \
+	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/deleting_into_journal.h \
+	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/deleting_into_work.cpp \
+	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/deleting_into_work.h \
+	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/deleting_records.cpp \
+	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/deleting_records.h \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/hot_news.cpp \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/hot_news.h \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/main.cpp \
@@ -1279,6 +1291,12 @@ project_for_smi_autogen/timestamp: \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/adding_into_work.ui \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/adding_records.ui \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/author_search.ui \
+	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/deleting_into_article.ui \
+	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/deleting_into_author.ui \
+	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/deleting_into_edition.ui \
+	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/deleting_into_journal.ui \
+	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/deleting_into_work.ui \
+	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/deleting_records.ui \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/hot_news.ui \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/mainwindow.ui \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/registration.ui \

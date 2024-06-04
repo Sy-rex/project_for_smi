@@ -2,6 +2,14 @@
 <ui version="4.0">
  <class>select_from_article</class>
  <widget class="QWidget" name="select_from_article">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>641</width>
+    <height>601</height>
+   </rect>
+  </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
