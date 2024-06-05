@@ -7,6 +7,7 @@
 #include <QPainterPath>
 #include <QMouseEvent>
 #include <QComboBox>
+#include <QLineEdit>
 
 namespace Ui {
 class adding_into_author;
@@ -51,12 +52,15 @@ protected:
 private slots:
     void openMainWindow();
     void loadComboBoxData(QComboBox *comboBox);
+    void addAuthorEntry(QComboBox *comboBox, QLineEdit *lineEdit, QLineEdit *lineEdit2);
 
 private:
     Ui::adding_into_author *ui;
     bool m_dragging = false;
     QPoint m_dragPosition;
     QComboBox *comboBox;
+    QLineEdit *lineEdit;
+    QLineEdit *lineEdit2;
 };
 
 #endif // ADDING_INTO_AUTHOR_H

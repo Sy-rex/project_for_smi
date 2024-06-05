@@ -6,6 +6,7 @@
 #include <QPainter>
 #include <QPainterPath>
 #include <QMouseEvent>
+#include <QLineEdit>
 
 namespace Ui {
 class adding_into_edition;
@@ -49,11 +50,16 @@ protected:
 
 private slots:
     void openMainWindow();
+    void addEditionEntry(QLineEdit *lineEdit, QLineEdit *lineEdit2, QLineEdit *lineEdit3, QLineEdit *lineEdit4);
 
 private:
     Ui::adding_into_edition *ui;
     bool m_dragging = false;
     QPoint m_dragPosition;
+    QLineEdit *lineEdit;
+    QLineEdit *lineEdit2;
+    QLineEdit *lineEdit3;
+    QLineEdit *lineEdit4;
 };
 
 #endif // ADDING_INTO_EDITION_H

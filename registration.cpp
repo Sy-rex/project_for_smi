@@ -16,15 +16,15 @@
 
 ToggleLabel::ToggleLabel(QWidget *parent)
     : QLabel(parent), toggled(false) {
-    move(254, 403);
+    move(254, 402);
 }
 
 void ToggleLabel::mousePressEvent(QMouseEvent *event) {
     if (event->button() == Qt::LeftButton) {
         if (toggled) {
-            move(254, 403);
+            move(254, 402);
         } else {
-            move(370, 403);
+            move(370, 402);
         }
         toggled = !toggled;
         emit toggledChanged(toggled);
@@ -99,7 +99,7 @@ registration::registration(QWidget *parent)
     pixmap3.setDevicePixelRatio(devicePixelRatio());
     imageLabel3->setPixmap(pixmap3);
     imageLabel3->setFixedSize(pixmap3.size() / pixmap3.devicePixelRatio());
-    imageLabel3->move(96, 272);
+    imageLabel3->move(96, 273);
     imageLabel3->show();
 
     QLabel *imageLabel = new QLabel(this);

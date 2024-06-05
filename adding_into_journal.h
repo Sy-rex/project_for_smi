@@ -6,6 +6,8 @@
 #include <QPainter>
 #include <QPainterPath>
 #include <QMouseEvent>
+#include <QLineEdit>
+#include "databasemanger.h"
 
 namespace Ui {
 class adding_into_journal;
@@ -49,11 +51,15 @@ protected:
 
 private slots:
     void openMainWindow();
+    void addJournalEntry(QLineEdit *lineEdit, QLineEdit *lineEdit2, QLineEdit *lineEdit3);
 
 private:
     Ui::adding_into_journal *ui;
     bool m_dragging = false;
     QPoint m_dragPosition;
+    QLineEdit *lineEdit;
+    QLineEdit *lineEdit2;
+    QLineEdit *lineEdit3;
 };
 
 #endif // ADDING_INTO_JOURNAL_H

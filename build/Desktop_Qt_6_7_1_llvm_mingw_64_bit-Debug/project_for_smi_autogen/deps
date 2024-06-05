@@ -93,6 +93,7 @@ project_for_smi_autogen/timestamp: \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_records.cpp \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_records.h \
 	C:/Users/User/Desktop/project_for_smi/build/Desktop_Qt_6_7_1_llvm_mingw_64_bit-Debug/.qtc/package-manager/auto-setup.cmake \
+	D:/QT/6.7.1/llvm-mingw_64/include/QtCore/QDebug \
 	D:/QT/6.7.1/llvm-mingw_64/include/QtCore/QEvent \
 	D:/QT/6.7.1/llvm-mingw_64/include/QtCore/QList \
 	D:/QT/6.7.1/llvm-mingw_64/include/QtCore/QObject \
@@ -265,7 +266,9 @@ project_for_smi_autogen/timestamp: \
 	D:/QT/6.7.1/llvm-mingw_64/include/QtGui/qrgba64.h \
 	D:/QT/6.7.1/llvm-mingw_64/include/QtGui/qscreen.h \
 	D:/QT/6.7.1/llvm-mingw_64/include/QtGui/qscreen_platform.h \
+	D:/QT/6.7.1/llvm-mingw_64/include/QtGui/qtextcursor.h \
 	D:/QT/6.7.1/llvm-mingw_64/include/QtGui/qtextdocument.h \
+	D:/QT/6.7.1/llvm-mingw_64/include/QtGui/qtextformat.h \
 	D:/QT/6.7.1/llvm-mingw_64/include/QtGui/qtextoption.h \
 	D:/QT/6.7.1/llvm-mingw_64/include/QtGui/qtgui-config.h \
 	D:/QT/6.7.1/llvm-mingw_64/include/QtGui/qtguiexports.h \
@@ -276,8 +279,16 @@ project_for_smi_autogen/timestamp: \
 	D:/QT/6.7.1/llvm-mingw_64/include/QtGui/qvectornd.h \
 	D:/QT/6.7.1/llvm-mingw_64/include/QtGui/qwindowdefs.h \
 	D:/QT/6.7.1/llvm-mingw_64/include/QtGui/qwindowdefs_win.h \
+	D:/QT/6.7.1/llvm-mingw_64/include/QtSql/QSqlDatabase \
+	D:/QT/6.7.1/llvm-mingw_64/include/QtSql/QSqlError \
+	D:/QT/6.7.1/llvm-mingw_64/include/QtSql/qsqldatabase.h \
+	D:/QT/6.7.1/llvm-mingw_64/include/QtSql/qsqlerror.h \
+	D:/QT/6.7.1/llvm-mingw_64/include/QtSql/qtsql-config.h \
+	D:/QT/6.7.1/llvm-mingw_64/include/QtSql/qtsqlexports.h \
+	D:/QT/6.7.1/llvm-mingw_64/include/QtSql/qtsqlglobal.h \
 	D:/QT/6.7.1/llvm-mingw_64/include/QtWidgets/QComboBox \
 	D:/QT/6.7.1/llvm-mingw_64/include/QtWidgets/QLabel \
+	D:/QT/6.7.1/llvm-mingw_64/include/QtWidgets/QLineEdit \
 	D:/QT/6.7.1/llvm-mingw_64/include/QtWidgets/QMainWindow \
 	D:/QT/6.7.1/llvm-mingw_64/include/QtWidgets/QPushButton \
 	D:/QT/6.7.1/llvm-mingw_64/include/QtWidgets/QWidget \
@@ -288,6 +299,7 @@ project_for_smi_autogen/timestamp: \
 	D:/QT/6.7.1/llvm-mingw_64/include/QtWidgets/qcombobox.h \
 	D:/QT/6.7.1/llvm-mingw_64/include/QtWidgets/qframe.h \
 	D:/QT/6.7.1/llvm-mingw_64/include/QtWidgets/qlabel.h \
+	D:/QT/6.7.1/llvm-mingw_64/include/QtWidgets/qlineedit.h \
 	D:/QT/6.7.1/llvm-mingw_64/include/QtWidgets/qmainwindow.h \
 	D:/QT/6.7.1/llvm-mingw_64/include/QtWidgets/qpushbutton.h \
 	D:/QT/6.7.1/llvm-mingw_64/include/QtWidgets/qrubberband.h \

@@ -2,6 +2,7 @@
 #include "ui_adding_into_edition.h"
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "databasemanger.h"
 #include <QPalette>
 #include <QColor>
 #include <QApplication>
@@ -11,6 +12,14 @@
 #include <QFont>
 #include <QLabel>
 #include <QLineEdit>
+#include <QSqlDatabase>
+#include <QSqlError>
+#include <QSqlQuery>
+#include <QSqlTableModel>
+#include <QMessageBox>
+#include <QVBoxLayout>
+#include <QMenu>
+#include <QStandardItemModel>
 
 
 class CloseButton : public QPushButton {
@@ -213,6 +222,10 @@ adding_into_edition::adding_into_edition(QWidget *parent)
     // Размещаем QPushButton в нужном месте
     imageButton2->move(244, 400);
 
+    connect(imageButton2, &QPushButton::clicked, this, [this, lineEdit, lineEdit2, lineEdit3, lineEdit4]() {
+        addEditionEntry(lineEdit, lineEdit2, lineEdit3, lineEdit4);
+    });
+
     // Показываем QPushButton на форме
     imageButton2->show();
 
@@ -249,3 +262,85 @@ void adding_into_edition::openMainWindow()
 
     this->close();
 }
+
+void adding_into_edition::addEditionEntry(QLineEdit *lineEdit, QLineEdit *lineEdit2, QLineEdit *lineEdit3, QLineEdit *lineEdit4) {
+    databasemanger& dbManager = databasemanger::instance(false);
+    if (!dbManager.openDatabase()) {
+        QMessageBox::critical(this, "Database Error", "Unable to open the database.");
+        return;
+    }
+
+    QString name = lineEdit->text();
+    QString dateOfFoundation = lineEdit2->text();
+    QString rating = lineEdit3->text();
+    QString editor = lineEdit4->text();
+
+    // Проверка, что все поля заполнены
+    if (name.isEmpty() || dateOfFoundation.isEmpty() || rating.isEmpty() || editor.isEmpty()) {
+        QMessageBox::warning(this, "Ошибка", "Пожалуйста, заполните все поля.");
+        return;
+    }
+
+    QSqlQuery query;
+    query.prepare("INSERT INTO edition (name, year_of_creation, rating, main_editor) VALUES (:name, :date_of_foundation, :rating, :editor)");
+    query.bindValue(":name", name);
+    query.bindValue(":date_of_foundation", dateOfFoundation);
+    query.bindValue(":rating", rating);
+    query.bindValue(":editor", editor);
+
+    if (query.exec()) {
+        QMessageBox msgBox;
+        msgBox.setStyleSheet(
+            "QMessageBox {"
+            "  background-color: #222338;"
+            "  color: #FFFFFF;"
+            "}"
+            "QMessageBox QLabel {"
+            "  color: #FFFFFF;"
+            "}"
+            "QMessageBox QPushButton {"
+            "  background-color: #48DCB7;"
+            "  color: #FFFFFF;"
+            "  border-radius: 5px;"
+            "  padding: 5px 10px;"
+            "}"
+            "QMessageBox QPushButton:hover {"
+            "  background-color: #8599F3;"
+            "}"
+            );
+        msgBox.setText("Запись успешно добавлена.");
+        msgBox.exec();
+
+        // Очищаем поля после успешного добавления
+        lineEdit->clear();
+        lineEdit2->clear();
+        lineEdit3->clear();
+        lineEdit4->clear();
+
+        // Здесь можно обновить представление таблицы, если необходимо
+        // Например, если у вас есть представление таблицы в другом виджете
+    } else {
+        QMessageBox msgBox;
+        msgBox.setStyleSheet(
+            "QMessageBox {"
+            "  background-color: #222338;"
+            "  color: #FFFFFF;"
+            "}"
+            "QMessageBox QLabel {"
+            "  color: #FFFFFF;"
+            "}"
+            "QMessageBox QPushButton {"
+            "  background-color: #E11010;"
+            "  color: #FFFFFF;"
+            "  border-radius: 5px;"
+            "  padding: 5px 10px;"
+            "}"
+            "QMessageBox QPushButton:hover {"
+            "  background-color: #FF0000;"
+            "}"
+            );
+        msgBox.setText("Ошибка при добавлении записи: " + query.lastError().text());
+        msgBox.exec();
+    }
+}
+

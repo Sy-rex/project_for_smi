@@ -239,6 +239,10 @@ adding_into_work::adding_into_work(QWidget *parent)
     // Размещаем QPushButton в нужном месте
     imageButton2->move(244, 400);
 
+    connect(imageButton2, &QPushButton::clicked, this, [this, comboBox, comboBox2]() {
+        addWorkEntry(comboBox, comboBox2);
+    });
+
     // Показываем QPushButton на форме
     imageButton2->show();
 
@@ -327,3 +331,180 @@ void adding_into_work::loadComboBoxData2(QComboBox *comboBox2) {
         qDebug() << "Failed to open database";
     }
 }
+
+void adding_into_work::addWorkEntry(QComboBox *comboBox, QComboBox *comboBox2) {
+    // Получаем значения из comboboxes
+    QString articleTitle = comboBox->currentText();
+    QString authorName = comboBox2->currentText();
+
+    // Проверяем, что все поля заполнены
+    if (articleTitle.isEmpty() || authorName.isEmpty()) {
+        QMessageBox msgBox;
+        msgBox.setStyleSheet(
+            "QMessageBox {"
+            "  background-color: #222338;"
+            "  color: #FFFFFF;"
+            "}"
+            "QMessageBox QLabel {"
+            "  color: #FFFFFF;"
+            "}"
+            "QMessageBox QPushButton {"
+            "  background-color: #E11010;"
+            "  color: #FFFFFF;"
+            "  border-radius: 5px;"
+            "  padding: 5px 10px;"
+            "}"
+            "QMessageBox QPushButton:hover {"
+            "  background-color: #FF0000;"
+            "}"
+            );
+        msgBox.setText("Пожалуйста, заполните все поля.");
+        msgBox.exec();
+        return;
+    }
+
+    // Открываем базу данных
+    databasemanger& dbManager = databasemanger::instance(false);
+    if (!dbManager.openDatabase()) {
+        QMessageBox msgBox;
+        msgBox.setStyleSheet(
+            "QMessageBox {"
+            "  background-color: #222338;"
+            "  color: #FFFFFF;"
+            "}"
+            "QMessageBox QLabel {"
+            "  color: #FFFFFF;"
+            "}"
+            "QMessageBox QPushButton {"
+            "  background-color: #E11010;"
+            "  color: #FFFFFF;"
+            "  border-radius: 5px;"
+            "  padding: 5px 10px;"
+            "}"
+            "QMessageBox QPushButton:hover {"
+            "  background-color: #FF0000;"
+            "}"
+            );
+        msgBox.setText("Не удалось подключиться к базе данных.");
+        msgBox.exec();
+        return;
+    }
+
+    // Получаем ID статьи по ее названию
+    QSqlQuery queryArticle(dbManager.database());
+    queryArticle.prepare("SELECT id FROM article WHERE name = :title");
+    queryArticle.bindValue(":title", articleTitle);
+    if (!queryArticle.exec() || !queryArticle.next()) {
+        QMessageBox msgBox;
+        msgBox.setStyleSheet(
+            "QMessageBox {"
+            "  background-color: #222338;"
+            "  color: #FFFFFF;"
+            "}"
+            "QMessageBox QLabel {"
+            "  color: #FFFFFF;"
+            "}"
+            "QMessageBox QPushButton {"
+            "  background-color: #E11010;"
+            "  color: #FFFFFF;"
+            "  border-radius: 5px;"
+            "  padding: 5px 10px;"
+            "}"
+            "QMessageBox QPushButton:hover {"
+            "  background-color: #FF0000;"
+            "}"
+            );
+        msgBox.setText("Не удалось найти статью с указанным названием.");
+        msgBox.exec();
+        return;
+    }
+    int articleId = queryArticle.value(0).toInt();
+
+    // Получаем ID автора по его имени
+    QSqlQuery queryAuthor(dbManager.database());
+    queryAuthor.prepare("SELECT id FROM authors WHERE fullname = :name");
+    queryAuthor.bindValue(":name", authorName);
+    if (!queryAuthor.exec() || !queryAuthor.next()) {
+        QMessageBox msgBox;
+        msgBox.setStyleSheet(
+            "QMessageBox {"
+            "  background-color: #222338;"
+            "  color: #FFFFFF;"
+            "}"
+            "QMessageBox QLabel {"
+            "  color: #FFFFFF;"
+            "}"
+            "QMessageBox QPushButton {"
+            "  background-color: #E11010;"
+            "  color: #FFFFFF;"
+            "  border-radius: 5px;"
+            "  padding: 5px 10px;"
+            "}"
+            "QMessageBox QPushButton:hover {"
+            "  background-color: #FF0000;"
+            "}"
+            );
+        msgBox.setText("Не удалось найти автора с указанным именем.");
+        msgBox.exec();
+        return;
+    }
+    int authorId = queryAuthor.value(0).toInt();
+
+    // Вставляем данные в таблицу article_authors
+    QSqlQuery query(dbManager.database());
+    query.prepare("INSERT INTO article_authors (article_id, author_id) "
+                  "VALUES (:article_id, :author_id)");
+    query.bindValue(":article_id", articleId);
+    query.bindValue(":author_id", authorId);
+
+    if (query.exec()) {
+        QMessageBox msgBox;
+        msgBox.setStyleSheet(
+            "QMessageBox {"
+            "  background-color: #222338;"
+            "  color: #FFFFFF;"
+            "}"
+            "QMessageBox QLabel {"
+            "  color: #FFFFFF;"
+            "}"
+            "QMessageBox QPushButton {"
+            "  background-color: #48DCB7;"
+            "  color: #FFFFFF;"
+            "  border-radius: 5px;"
+            "  padding: 5px 10px;"
+            "}"
+            "QMessageBox QPushButton:hover {"
+            "  background-color: #8599F3;"
+            "}"
+            );
+        msgBox.setText("Запись успешно добавлена.");
+        msgBox.exec();
+
+        // Очищаем поля после успешного добавления
+        comboBox->setCurrentIndex(-1);
+        comboBox2->setCurrentIndex(-1);
+    } else {
+        QMessageBox msgBox;
+        msgBox.setStyleSheet(
+            "QMessageBox {"
+            "  background-color: #222338;"
+            "  color: #FFFFFF;"
+            "}"
+            "QMessageBox QLabel {"
+            "  color: #FFFFFF;"
+            "}"
+            "QMessageBox QPushButton {"
+            "  background-color: #E11010;"
+            "  color: #FFFFFF;"
+            "  border-radius: 5px;"
+            "  padding: 5px 10px;"
+            "}"
+            "QMessageBox QPushButton:hover {"
+            "  background-color: #FF0000;"
+            "}"
+            );
+        msgBox.setText("Ошибка при добавлении записи: " + query.lastError().text());
+        msgBox.exec();
+    }
+}
+

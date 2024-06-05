@@ -7,6 +7,7 @@
 #include <QPainterPath>
 #include <QMouseEvent>
 #include <QComboBox>
+#include <QLineEdit>
 
 namespace Ui {
 class adding_into_article;
@@ -51,12 +52,18 @@ protected:
 private slots:
     void openMainWindow();
     void loadComboBoxData(QComboBox *comboBox);
+    void addArticleEntry(QComboBox *comboBox, QLineEdit *lineEdit, QLineEdit *lineEdit2, QLineEdit *lineEdit3, QLineEdit *lineEdit4, QLineEdit *lineEdit5);
 
 private:
     Ui::adding_into_article *ui;
     bool m_dragging = false;
     QPoint m_dragPosition;
     QComboBox *comboBox;
+    QLineEdit *lineEdit;
+    QLineEdit *lineEdit2;
+    QLineEdit *lineEdit3;
+    QLineEdit *lineEdit4;
+    QLineEdit *lineEdit5;
 };
 
 #endif // ADDING_INTO_ARTICLE_H

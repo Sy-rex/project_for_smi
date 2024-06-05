@@ -167,6 +167,9 @@ C:/ProgramData/QtCreator/Links/0d7854161733bae1a5c351db673c543d/project_for_smi_
   D:/QT/6.7.1/llvm-mingw_64/include/QtGui/qrgba64.h \
   D:/QT/6.7.1/llvm-mingw_64/include/QtGui/qscreen.h \
   D:/QT/6.7.1/llvm-mingw_64/include/QtGui/qscreen_platform.h \
+  D:/QT/6.7.1/llvm-mingw_64/include/QtGui/qtextcursor.h \
+  D:/QT/6.7.1/llvm-mingw_64/include/QtGui/qtextdocument.h \
+  D:/QT/6.7.1/llvm-mingw_64/include/QtGui/qtextformat.h \
   D:/QT/6.7.1/llvm-mingw_64/include/QtGui/qtextoption.h \
   D:/QT/6.7.1/llvm-mingw_64/include/QtGui/qtgui-config.h \
   D:/QT/6.7.1/llvm-mingw_64/include/QtGui/qtguiexports.h \
@@ -176,8 +179,11 @@ C:/ProgramData/QtCreator/Links/0d7854161733bae1a5c351db673c543d/project_for_smi_
   D:/QT/6.7.1/llvm-mingw_64/include/QtGui/qvectornd.h \
   D:/QT/6.7.1/llvm-mingw_64/include/QtGui/qwindowdefs.h \
   D:/QT/6.7.1/llvm-mingw_64/include/QtGui/qwindowdefs_win.h \
+  D:/QT/6.7.1/llvm-mingw_64/include/QtWidgets/QLineEdit \
   D:/QT/6.7.1/llvm-mingw_64/include/QtWidgets/QMainWindow \
   D:/QT/6.7.1/llvm-mingw_64/include/QtWidgets/QWidget \
+  D:/QT/6.7.1/llvm-mingw_64/include/QtWidgets/qframe.h \
+  D:/QT/6.7.1/llvm-mingw_64/include/QtWidgets/qlineedit.h \
   D:/QT/6.7.1/llvm-mingw_64/include/QtWidgets/qmainwindow.h \
   D:/QT/6.7.1/llvm-mingw_64/include/QtWidgets/qsizepolicy.h \
   D:/QT/6.7.1/llvm-mingw_64/include/QtWidgets/qtabwidget.h \

@@ -52,6 +52,7 @@ private slots:
     void openMainWindow();
     void loadComboBoxData(QComboBox *comboBox);
     void loadComboBoxData2(QComboBox *comboBox2);
+    void addWorkEntry(QComboBox *comboBox, QComboBox *comboBox2);
 
 private:
     Ui::adding_into_work *ui;

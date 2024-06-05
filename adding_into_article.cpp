@@ -18,6 +18,11 @@
 #include <QSqlError>
 #include <QVariant>
 #include <QSqlDatabase>
+#include <QSqlTableModel>
+#include <QMessageBox>
+#include <QVBoxLayout>
+#include <QMenu>
+#include <QStandardItemModel>
 
 
 class CloseButton : public QPushButton {
@@ -296,6 +301,10 @@ adding_into_article::adding_into_article(QWidget *parent)
     // Размещаем QPushButton в нужном месте
     imageButton2->move(244, 400);
 
+    connect(imageButton2, &QPushButton::clicked, this, [this, comboBox, lineEdit, lineEdit2, lineEdit3, lineEdit4, lineEdit5]() {
+        addArticleEntry(comboBox, lineEdit, lineEdit2, lineEdit3, lineEdit4, lineEdit5);
+    });
+
     // Показываем QPushButton на форме
     imageButton2->show();
 
@@ -358,3 +367,161 @@ void adding_into_article::loadComboBoxData(QComboBox *comboBox) {
         qDebug() << "Failed to open database";
     }
 }
+
+void adding_into_article::addArticleEntry(QComboBox *comboBox, QLineEdit *lineEdit, QLineEdit *lineEdit2, QLineEdit *lineEdit3, QLineEdit *lineEdit4, QLineEdit *lineEdit5) {
+    // Получаем значения из полей ввода
+    QString journalName = comboBox->currentText();
+    QString articleName = lineEdit->text();
+    QString rating = lineEdit2->text();
+    QString description = lineEdit3->text();
+    QString cost = lineEdit4->text();
+    QString publicationDate = lineEdit5->text();
+
+    // Проверяем, что все поля заполнены
+    if (journalName.isEmpty() || articleName.isEmpty() || rating.isEmpty() || description.isEmpty() || cost.isEmpty() || publicationDate.isEmpty()) {
+        QMessageBox msgBox;
+        msgBox.setStyleSheet(
+            "QMessageBox {"
+            "  background-color: #222338;"
+            "  color: #FFFFFF;"
+            "}"
+            "QMessageBox QLabel {"
+            "  color: #FFFFFF;"
+            "}"
+            "QMessageBox QPushButton {"
+            "  background-color: #E11010;"
+            "  color: #FFFFFF;"
+            "  border-radius: 5px;"
+            "  padding: 5px 10px;"
+            "}"
+            "QMessageBox QPushButton:hover {"
+            "  background-color: #FF0000;"
+            "}"
+            );
+        msgBox.setText("Пожалуйста, заполните все поля.");
+        msgBox.exec();
+        return;
+    }
+
+    // Открываем базу данных
+    databasemanger& dbManager = databasemanger::instance(false);
+    if (!dbManager.openDatabase()) {
+        QMessageBox msgBox;
+        msgBox.setStyleSheet(
+            "QMessageBox {"
+            "  background-color: #222338;"
+            "  color: #FFFFFF;"
+            "}"
+            "QMessageBox QLabel {"
+            "  color: #FFFFFF;"
+            "}"
+            "QMessageBox QPushButton {"
+            "  background-color: #E11010;"
+            "  color: #FFFFFF;"
+            "  border-radius: 5px;"
+            "  padding: 5px 10px;"
+            "}"
+            "QMessageBox QPushButton:hover {"
+            "  background-color: #FF0000;"
+            "}"
+            );
+        msgBox.setText("Не удалось подключиться к базе данных.");
+        msgBox.exec();
+        return;
+    }
+
+    // Получаем ID журнала по его названию
+    QSqlQuery query(dbManager.database());
+    query.prepare("SELECT id FROM journal WHERE name = :name");
+    query.bindValue(":name", journalName);
+    if (!query.exec() || !query.next()) {
+        QMessageBox msgBox;
+        msgBox.setStyleSheet(
+            "QMessageBox {"
+            "  background-color: #222338;"
+            "  color: #FFFFFF;"
+            "}"
+            "QMessageBox QLabel {"
+            "  color: #FFFFFF;"
+            "}"
+            "QMessageBox QPushButton {"
+            "  background-color: #E11010;"
+            "  color: #FFFFFF;"
+            "  border-radius: 5px;"
+            "  padding: 5px 10px;"
+            "}"
+            "QMessageBox QPushButton:hover {"
+            "  background-color: #FF0000;"
+            "}"
+            );
+        msgBox.setText("Не удалось найти журнал с указанным названием.");
+        msgBox.exec();
+        return;
+    }
+    int journalId = query.value(0).toInt();
+
+    // Вставляем данные в таблицу article
+    query.prepare("INSERT INTO article (journal_id, name, rating, description, price, release_date) "
+                  "VALUES (:journal_id, :name, :rating, :description, :cost, :publication_date)");
+    query.bindValue(":journal_id", journalId);
+    query.bindValue(":name", articleName);
+    query.bindValue(":rating", rating);
+    query.bindValue(":description", description);
+    query.bindValue(":cost", cost);
+    query.bindValue(":publication_date", publicationDate);
+
+    if (query.exec()) {
+        QMessageBox msgBox;
+        msgBox.setStyleSheet(
+            "QMessageBox {"
+            "  background-color: #222338;"
+            "  color: #FFFFFF;"
+            "}"
+            "QMessageBox QLabel {"
+            "  color: #FFFFFF;"
+            "}"
+            "QMessageBox QPushButton {"
+            "  background-color: #48DCB7;"
+            "  color: #FFFFFF;"
+            "  border-radius: 5px;"
+            "  padding: 5px 10px;"
+            "}"
+            "QMessageBox QPushButton:hover {"
+            "  background-color: #8599F3;"
+            "}"
+            );
+        msgBox.setText("Статья успешно добавлена.");
+        msgBox.exec();
+
+        // Очищаем поля после успешного добавления
+        comboBox->setCurrentIndex(-1);
+        lineEdit->clear();
+        lineEdit2->clear();
+        lineEdit3->clear();
+        lineEdit4->clear();
+        lineEdit5->clear();
+    } else {
+        QMessageBox msgBox;
+        msgBox.setStyleSheet(
+            "QMessageBox {"
+            "  background-color: #222338;"
+            "  color: #FFFFFF;"
+            "}"
+            "QMessageBox QLabel {"
+            "  color: #FFFFFF;"
+            "}"
+            "QMessageBox QPushButton {"
+            "  background-color: #E11010;"
+            "  color: #FFFFFF;"
+            "  border-radius: 5px;"
+            "  padding: 5px 10px;"
+            "}"
+            "QMessageBox QPushButton:hover {"
+            "  background-color: #FF0000;"
+            "}"
+            );
+        msgBox.setText("Ошибка при добавлении статьи: " + query.lastError().text());
+        msgBox.exec();
+    }
+}
+
