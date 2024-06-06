@@ -1,5 +1,6 @@
 #include "updating_into_work.h"
 #include "ui_updating_into_work.h"
+#include "updating_work.h"
 #include "databasemanger.h"
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
@@ -180,6 +181,17 @@ void updating_into_work::openMainWindow()
 }
 
 void updating_into_work::updateRecord(QModelIndex index) {
+    if (!index.isValid())
+        return;
+
+    QString article = ui->tableView->model()->data(ui->tableView->model()->index(index.row(), 2)).toString();
+    QString author = ui->tableView->model()->data(ui->tableView->model()->index(index.row(), 3)).toString();
+
+    updating_work *workWindow = new updating_work();
+    workWindow->setFields(article, author);
+    workWindow->show();
+
+    this->close();
 }
 
 void updating_into_work::showErrorMessageBox(const QString &message) {

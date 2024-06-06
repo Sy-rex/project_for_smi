@@ -56,6 +56,11 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         updating_into_edition.h updating_into_edition.cpp updating_into_edition.ui
         updating_into_journal.h updating_into_journal.cpp updating_into_journal.ui
         updating_into_work.h updating_into_work.cpp updating_into_work.ui
+        updating_article.h updating_article.cpp updating_article.ui
+        updating_journal.h updating_journal.cpp updating_journal.ui
+        updating_edition.h updating_edition.cpp updating_edition.ui
+        updating_author.h updating_author.cpp updating_author.ui
+        updating_work.h updating_work.cpp updating_work.ui
     )
 else()
     if(ANDROID)

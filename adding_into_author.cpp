@@ -18,6 +18,9 @@
 #include <QSqlError>
 #include <QVariant>
 #include <QSqlDatabase>
+#include <QValidator>
+#include <QRegularExpression>
+#include <QRegularExpressionValidator>
 
 
 class CloseButton : public QPushButton {
@@ -328,6 +331,60 @@ void adding_into_author::addAuthorEntry(QComboBox *comboBox, QLineEdit *lineEdit
             "}"
             );
         msgBox.setText("Пожалуйста, заполните все поля.");
+        msgBox.exec();
+        return;
+    }
+
+    QRegularExpression regex("[а-яА-Яa-zA-Z0-9- ]+");
+    QRegularExpressionValidator validator(regex, nullptr);
+    int pos = 0;
+    if (validator.validate(authorName, pos) != QValidator::Acceptable) {
+        QMessageBox msgBox;
+        msgBox.setStyleSheet(
+            "QMessageBox {"
+            "  background-color: #222338;"
+            "  color: #FFFFFF;"
+            "}"
+            "QMessageBox QLabel {"
+            "  color: #FFFFFF;"
+            "}"
+            "QMessageBox QPushButton {"
+            "  background-color: #E11010;"
+            "  color: #FFFFFF;"
+            "  border-radius: 5px;"
+            "  padding: 5px 10px;"
+            "}"
+            "QMessageBox QPushButton:hover {"
+            "  background-color: #FF0000;"
+            "}"
+            );
+        msgBox.setText("поле Автор может содержать только буквы русского и английского алфавита, цифры, пробелы и знак тире.");
+        msgBox.exec();
+        return;
+    }
+
+    QRegularExpression ratingRegex("^([0-9]|10)(\\.[0-9])?$");
+    if (!ratingRegex.match(rating).hasMatch()) {
+        QMessageBox msgBox;
+        msgBox.setStyleSheet(
+            "QMessageBox {"
+            "  background-color: #222338;"
+            "  color: #FFFFFF;"
+            "}"
+            "QMessageBox QLabel {"
+            "  color: #FFFFFF;"
+            "}"
+            "QMessageBox QPushButton {"
+            "  background-color: #E11010;"
+            "  color: #FFFFFF;"
+            "  border-radius: 5px;"
+            "  padding: 5px 10px;"
+            "}"
+            "QMessageBox QPushButton:hover {"
+            "  background-color: #FF0000;"
+            "}"
+            );
+        msgBox.setText("Рейтинг должен быть числом от 0 до 10.");
         msgBox.exec();
         return;
     }

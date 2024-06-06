@@ -510,6 +510,24 @@
 			null
 		],
 		[
+			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_article.h",
+			"MU",
+			"EWIEGA46WW/moc_updating_article.cpp",
+			null
+		],
+		[
+			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_author.h",
+			"MU",
+			"EWIEGA46WW/moc_updating_author.cpp",
+			null
+		],
+		[
+			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_edition.h",
+			"MU",
+			"EWIEGA46WW/moc_updating_edition.cpp",
+			null
+		],
+		[
 			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_into_article.h",
 			"MU",
 			"EWIEGA46WW/moc_updating_into_article.cpp",
@@ -540,9 +558,21 @@
 			null
 		],
 		[
+			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_journal.h",
+			"MU",
+			"EWIEGA46WW/moc_updating_journal.cpp",
+			null
+		],
+		[
 			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_records.h",
 			"MU",
 			"EWIEGA46WW/moc_updating_records.cpp",
+			null
+		],
+		[
+			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_work.h",
+			"MU",
+			"EWIEGA46WW/moc_updating_work.cpp",
 			null
 		]
 	],
@@ -729,6 +759,21 @@
 			null
 		],
 		[
+			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_article.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_author.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_edition.cpp",
+			"MU",
+			null
+		],
+		[
 			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_into_article.cpp",
 			"MU",
 			null
@@ -754,7 +799,17 @@
 			null
 		],
 		[
+			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_journal.cpp",
+			"MU",
+			null
+		],
+		[
 			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_records.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_work.cpp",
 			"MU",
 			null
 		]

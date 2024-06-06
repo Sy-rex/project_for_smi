@@ -1,5 +1,6 @@
 #include "updating_into_article.h"
 #include "ui_updating_into_article.h"
+#include "updating_article.h"
 #include "databasemanger.h"
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
@@ -187,6 +188,21 @@ void updating_into_article::openMainWindow()
 
 
 void updating_into_article::updateRecord(QModelIndex index) {
+    if (!index.isValid())
+        return;
+
+    int id_article = ui->tableView->model()->data(ui->tableView->model()->index(index.row(), 0)).toInt();
+    QString journal = ui->tableView->model()->data(ui->tableView->model()->index(index.row(), 1)).toString();
+    QString name = ui->tableView->model()->data(ui->tableView->model()->index(index.row(), 2)).toString();
+    QString rating = ui->tableView->model()->data(ui->tableView->model()->index(index.row(), 3)).toString();
+    QString description = ui->tableView->model()->data(ui->tableView->model()->index(index.row(), 4)).toString();
+    QString price = ui->tableView->model()->data(ui->tableView->model()->index(index.row(), 5)).toString();
+    QString yearOfFoundation = ui->tableView->model()->data(ui->tableView->model()->index(index.row(), 6)).toString();
+    updating_article *articleWindow = new updating_article();
+    articleWindow->setFields(id_article, journal, name, rating, description, price, yearOfFoundation);
+    articleWindow->show();
+
+    this->close();
 }
 
 

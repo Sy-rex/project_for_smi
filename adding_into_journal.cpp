@@ -20,6 +20,9 @@
 #include <QVBoxLayout>
 #include <QMenu>
 #include <QStandardItemModel>
+#include <QValidator>
+#include <QRegularExpression>
+#include <QRegularExpressionValidator>
 
 
 class CloseButton : public QPushButton {
@@ -258,6 +261,87 @@ void adding_into_journal::addJournalEntry(QLineEdit *lineEdit, QLineEdit *lineEd
         QMessageBox::warning(this, "Ошибка", "Пожалуйста, заполните все поля.");
         return;
     }
+
+    QRegularExpression regex("[а-яА-Яa-zA-Z0-9- ]+");
+    QRegularExpressionValidator validator(regex, nullptr);
+    int pos = 0;
+    if (validator.validate(name, pos) != QValidator::Acceptable) {
+        QMessageBox msgBox;
+        msgBox.setStyleSheet(
+            "QMessageBox {"
+            "  background-color: #222338;"
+            "  color: #FFFFFF;"
+            "}"
+            "QMessageBox QLabel {"
+            "  color: #FFFFFF;"
+            "}"
+            "QMessageBox QPushButton {"
+            "  background-color: #E11010;"
+            "  color: #FFFFFF;"
+            "  border-radius: 5px;"
+            "  padding: 5px 10px;"
+            "}"
+            "QMessageBox QPushButton:hover {"
+            "  background-color: #FF0000;"
+            "}"
+            );
+        msgBox.setText("поля Название и Редактор могут содержать только буквы русского и английского алфавита, цифры, пробелы и знак тире.");
+        msgBox.exec();
+        return;
+    }
+
+    QRegularExpression ratingRegex("^([0-9]|10)(\\.[0-9])?$");
+    if (!ratingRegex.match(rating).hasMatch()) {
+        QMessageBox msgBox;
+        msgBox.setStyleSheet(
+            "QMessageBox {"
+            "  background-color: #222338;"
+            "  color: #FFFFFF;"
+            "}"
+            "QMessageBox QLabel {"
+            "  color: #FFFFFF;"
+            "}"
+            "QMessageBox QPushButton {"
+            "  background-color: #E11010;"
+            "  color: #FFFFFF;"
+            "  border-radius: 5px;"
+            "  padding: 5px 10px;"
+            "}"
+            "QMessageBox QPushButton:hover {"
+            "  background-color: #FF0000;"
+            "}"
+            );
+        msgBox.setText("Рейтинг должен быть числом от 0 до 10.");
+        msgBox.exec();
+        return;
+    }
+
+    QRegularExpression dateRegex("^\\d{4}-\\d{2}-\\d{2}$");
+    if (!dateRegex.match(yearOfFoundation).hasMatch()) {
+        QMessageBox msgBox;
+        msgBox.setStyleSheet(
+            "QMessageBox {"
+            "  background-color: #222338;"
+            "  color: #FFFFFF;"
+            "}"
+            "QMessageBox QLabel {"
+            "  color: #FFFFFF;"
+            "}"
+            "QMessageBox QPushButton {"
+            "  background-color: #E11010;"
+            "  color: #FFFFFF;"
+            "  border-radius: 5px;"
+            "  padding: 5px 10px;"
+            "}"
+            "QMessageBox QPushButton:hover {"
+            "  background-color: #FF0000;"
+            "}"
+            );
+        msgBox.setText("Дата публикации должна быть в формате YYYY-MM-DD.");
+        msgBox.exec();
+        return;
+    }
+
 
     QSqlQuery query;
     query.prepare("INSERT INTO journal (name, year_of_foundation, rating) VALUES (:name, :year_of_foundation, :rating)");

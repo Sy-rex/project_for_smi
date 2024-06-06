@@ -315,6 +315,7 @@ void deleting_into_journal::deleteRecord(QModelIndex index) {
         }
     }
 }
+
 void deleting_into_journal::customMenuRequested(QPoint pos) {
     QModelIndex index = ui->tableView->indexAt(pos);
     if (!index.isValid())

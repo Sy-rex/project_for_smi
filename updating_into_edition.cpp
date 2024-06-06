@@ -1,5 +1,6 @@
 #include "updating_into_edition.h"
 #include "ui_updating_into_edition.h"
+#include "updating_edition.h"
 #include "databasemanger.h"
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
@@ -21,6 +22,7 @@
 #include <QVBoxLayout>
 #include <QMenu>
 #include <QStandardItemModel>
+
 
 
 class CloseButton : public QPushButton {
@@ -184,6 +186,20 @@ void updating_into_edition::openMainWindow()
 
 
 void updating_into_edition::updateRecord(QModelIndex index) {
+    if (!index.isValid())
+        return;
+
+    int id_edition = ui->tableView->model()->data(ui->tableView->model()->index(index.row(), 0)).toInt();
+    QString name = ui->tableView->model()->data(ui->tableView->model()->index(index.row(), 1)).toString();
+    QString yearOfFoundation = ui->tableView->model()->data(ui->tableView->model()->index(index.row(), 3)).toString();
+    QString rating = ui->tableView->model()->data(ui->tableView->model()->index(index.row(), 4)).toString();
+    QString editor = ui->tableView->model()->data(ui->tableView->model()->index(index.row(), 2)).toString();
+
+    updating_edition *editionWindow = new updating_edition();
+    editionWindow->setFields(id_edition, name, yearOfFoundation, rating, editor);
+    editionWindow->show();
+
+    this->close();
 }
 
 

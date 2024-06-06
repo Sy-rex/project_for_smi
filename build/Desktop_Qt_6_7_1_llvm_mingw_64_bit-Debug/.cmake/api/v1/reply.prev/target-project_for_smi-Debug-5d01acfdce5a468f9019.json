@@ -84,13 +84,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 89,
+				"line" : 94,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 73,
+				"line" : 78,
 				"parent" : 0
 			},
 			{
@@ -565,18 +565,23 @@
 				73,
 				76,
 				79,
-				108
+				82,
+				85,
+				88,
+				91,
+				94,
+				128
 			]
 		}
 	],
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 0,
-			"id" : "project_for_smi_autogen::@6890427a1f51a3e7e1df"
+			"id" : "project_for_smi_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		},
 		{
-			"id" : "project_for_smi_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
+			"backtrace" : 0,
+			"id" : "project_for_smi_autogen::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "project_for_smi::@6890427a1f51a3e7e1df",
@@ -744,7 +749,12 @@
 				73,
 				76,
 				79,
-				108
+				82,
+				85,
+				88,
+				91,
+				94,
+				128
 			]
 		},
 		{
@@ -778,20 +788,10 @@
 				75,
 				78,
 				81,
-				82,
-				83,
 				84,
-				85,
-				86,
 				87,
-				88,
-				89,
 				90,
-				91,
-				92,
 				93,
-				94,
-				95,
 				96,
 				97,
 				98,
@@ -802,7 +802,27 @@
 				103,
 				104,
 				105,
-				106
+				106,
+				107,
+				108,
+				109,
+				110,
+				111,
+				112,
+				113,
+				114,
+				115,
+				116,
+				117,
+				118,
+				119,
+				120,
+				121,
+				122,
+				123,
+				124,
+				125,
+				126
 			]
 		},
 		{
@@ -836,15 +856,20 @@
 				74,
 				77,
 				80,
-				107
+				83,
+				86,
+				89,
+				92,
+				95,
+				127
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				109,
-				110
+				129,
+				130
 			]
 		}
 	],
@@ -1285,6 +1310,86 @@
 			"sourceGroupIndex" : 2
 		},
 		{
+			"backtrace" : 4,
+			"path" : "updating_article.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "updating_article.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "updating_article.ui",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"path" : "updating_journal.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "updating_journal.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "updating_journal.ui",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"path" : "updating_edition.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "updating_edition.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "updating_edition.ui",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"path" : "updating_author.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "updating_author.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "updating_author.ui",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"path" : "updating_work.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "updating_work.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "updating_work.ui",
+			"sourceGroupIndex" : 2
+		},
+		{
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "C:/ProgramData/QtCreator/Links/0d7854161733bae1a5c351db673c543d/project_for_smi_autogen/include/ui_mainwindow.h",
@@ -1438,6 +1543,36 @@
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "C:/ProgramData/QtCreator/Links/0d7854161733bae1a5c351db673c543d/project_for_smi_autogen/include/ui_updating_into_work.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "C:/ProgramData/QtCreator/Links/0d7854161733bae1a5c351db673c543d/project_for_smi_autogen/include/ui_updating_article.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "C:/ProgramData/QtCreator/Links/0d7854161733bae1a5c351db673c543d/project_for_smi_autogen/include/ui_updating_journal.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "C:/ProgramData/QtCreator/Links/0d7854161733bae1a5c351db673c543d/project_for_smi_autogen/include/ui_updating_edition.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "C:/ProgramData/QtCreator/Links/0d7854161733bae1a5c351db673c543d/project_for_smi_autogen/include/ui_updating_author.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "C:/ProgramData/QtCreator/Links/0d7854161733bae1a5c351db673c543d/project_for_smi_autogen/include/ui_updating_work.h",
 			"sourceGroupIndex" : 1
 		},
 		{

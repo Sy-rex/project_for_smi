@@ -47,5 +47,6 @@
         <file>description_author_edit.png</file>
         <file>description_edition_edit.png</file>
         <file>description_journal_edit.png</file>
+        <file>update_button.png</file>
     </qresource>
 </RCC>

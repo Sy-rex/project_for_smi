@@ -1,5 +1,6 @@
 #include "updating_into_journal.h"
 #include "ui_updating_into_journal.h"
+#include "updating_journal.h"
 #include "databasemanger.h"
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
@@ -75,7 +76,7 @@ updating_into_journal::updating_into_journal(QWidget *parent)
     QLabel *label1 = new QLabel("UPDATING INTO JOURNAL", this);
     label1->setStyleSheet("color: #FFFFFF;");
     label1->setFixedSize(400,40);
-    label1->move(164,80);
+    label1->move(150,80);
 
     // Устанавливаем установленный шрифт для виджета, отображающего текст
     label1->setFont(font);
@@ -181,8 +182,23 @@ void updating_into_journal::openMainWindow()
 
     this->close();
 }
-void updating_into_journal::updateRecord(QModelIndex index) {
+
+void updating_into_journal::updateRecord(QModelIndex index)
+{
+    if (!index.isValid())
+        return;
+    int id_journal = ui->tableView->model()->data(ui->tableView->model()->index(index.row(), 0)).toInt();
+    QString name = ui->tableView->model()->data(ui->tableView->model()->index(index.row(), 1)).toString();
+    QString yearOfFoundation = ui->tableView->model()->data(ui->tableView->model()->index(index.row(), 2)).toString();
+    QString rating = ui->tableView->model()->data(ui->tableView->model()->index(index.row(), 3)).toString();
+
+    updating_journal *journalWindow = new updating_journal();
+    journalWindow->setFields(id_journal,name, yearOfFoundation, rating);
+    journalWindow->show();
+
+    this->close();
 }
+
 void updating_into_journal::customMenuRequested(QPoint pos) {
     QModelIndex index = ui->tableView->indexAt(pos);
     if (!index.isValid())

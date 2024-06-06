@@ -1,5 +1,6 @@
 #include "updating_into_author.h"
 #include "ui_updating_into_author.h"
+#include "updating_author.h"
 #include "databasemanger.h"
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
@@ -75,7 +76,7 @@ updating_into_author::updating_into_author(QWidget *parent)
     QLabel *label1 = new QLabel("UPDATING INTO AUTHOR", this);
     label1->setStyleSheet("color: #FFFFFF;");
     label1->setFixedSize(400,40);
-    label1->move(164,80);
+    label1->move(155,80);
 
     // Устанавливаем установленный шрифт для виджета, отображающего текст
     label1->setFont(font);
@@ -184,6 +185,19 @@ void updating_into_author::openMainWindow()
     this->close();
 }
 void updating_into_author::updateRecord(QModelIndex index) {
+    if (!index.isValid())
+        return;
+
+    int id_author = ui->tableView->model()->data(ui->tableView->model()->index(index.row(), 0)).toInt();
+    QString author = ui->tableView->model()->data(ui->tableView->model()->index(index.row(), 1)).toString();
+    QString edition = ui->tableView->model()->data(ui->tableView->model()->index(index.row(), 2)).toString();
+    QString rating = ui->tableView->model()->data(ui->tableView->model()->index(index.row(), 3)).toString();
+
+    updating_author *authorWindow = new updating_author();
+    authorWindow->setFields(id_author, author, edition, rating);
+    authorWindow->show();
+
+    this->close();
 }
 
 void updating_into_author::showErrorMessageBox(const QString &message) {

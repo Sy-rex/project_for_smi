@@ -6,6 +6,7 @@
 #include <QPainter>
 #include <QPainterPath>
 #include <QMouseEvent>
+#include "updating_edition.h"
 
 namespace Ui {
 class updating_into_edition;
@@ -58,6 +59,7 @@ private:
     Ui::updating_into_edition *ui;
     bool m_dragging = false;
     QPoint m_dragPosition;
+    updating_edition *editionWindow;
 };
 
 #endif // updating_into_edition_H

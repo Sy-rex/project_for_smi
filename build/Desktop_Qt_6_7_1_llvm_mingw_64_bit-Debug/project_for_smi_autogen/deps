@@ -80,6 +80,12 @@ project_for_smi_autogen/timestamp: \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/tariffuserwindow.h \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/update_data.cpp \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/update_data.h \
+	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_article.cpp \
+	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_article.h \
+	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_author.cpp \
+	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_author.h \
+	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_edition.cpp \
+	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_edition.h \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_into_article.cpp \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_into_article.h \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_into_author.cpp \
@@ -90,8 +96,12 @@ project_for_smi_autogen/timestamp: \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_into_journal.h \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_into_work.cpp \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_into_work.h \
+	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_journal.cpp \
+	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_journal.h \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_records.cpp \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_records.h \
+	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_work.cpp \
+	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_work.h \
 	C:/Users/User/Desktop/project_for_smi/build/Desktop_Qt_6_7_1_llvm_mingw_64_bit-Debug/.qtc/package-manager/auto-setup.cmake \
 	D:/QT/6.7.1/llvm-mingw_64/include/QtCore/QDebug \
 	D:/QT/6.7.1/llvm-mingw_64/include/QtCore/QEvent \
@@ -1327,10 +1337,15 @@ project_for_smi_autogen/timestamp: \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/select_from_article.ui \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/tariffuserwindow.ui \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/update_data.ui \
+	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_article.ui \
+	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_author.ui \
+	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_edition.ui \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_into_article.ui \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_into_author.ui \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_into_edition.ui \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_into_journal.ui \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_into_work.ui \
+	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_journal.ui \
 	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_records.ui \
+	C:/ProgramData/QtCreator/Links/b2ad0b3bee70096f7320af22d346fac4/updating_work.ui \
 	C:/Program\ Files/CMake/bin/cmake.exe

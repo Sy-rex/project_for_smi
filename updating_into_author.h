@@ -6,6 +6,7 @@
 #include <QPainter>
 #include <QPainterPath>
 #include <QMouseEvent>
+#include "updating_author.h"
 
 namespace Ui {
 class updating_into_author;
@@ -59,6 +60,7 @@ private:
     Ui::updating_into_author *ui;
     bool m_dragging = false;
     QPoint m_dragPosition;
+    updating_author *authorWindow;
 };
 
 #endif // updating_into_author_H

@@ -7,6 +7,7 @@
 *****************************************************************************/
 
 #include "../../../b2ad0b3bee70096f7320af22d346fac4/updating_into_journal.h"
+#include <QtGui/qtextcursor.h>
 #include <QtCore/qmetatype.h>
 
 #include <QtCore/qtmochelpers.h>
